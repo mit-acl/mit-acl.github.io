@@ -1,0 +1,90 @@
+---
+layout: default
+title: Massachusetts Institute of Technology
+description: The Aerospace Controls Laboratory at MIT
+featured_image: /images/social.jpg
+---
+
+<section class="intro">
+    <div class="wrap post-table">
+        <!-- Pinned Posts -->
+        {% if paginator.page == 1 %}
+        <table align="center" border="0" cellspacing="0" cellpadding="20" id="pinned-posts-table">
+            {% for post in site.pinned_posts %}
+            <tr class="post-title">
+                <td colspan="2">
+                    <h1>
+                        {{ post.title }}
+                    </h1>
+                    {% if post.date %}
+                    <time><h6>
+                        {{ post.date | date_to_long_string }}
+                    </h6></time>
+                    {% endif %}
+                </td>
+            </tr>
+            <tr class="post-content">
+                <td width="100%" colspan="2" valign="top">
+                    {{ post.content }}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+        <h1>Recent News</h1>
+        <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
+            <tr>
+                <td>
+                    <table align="center" border="0" cellspacing="0" cellpadding="20">
+                        <!-- Rest of Posts -->
+                        {% for post in paginator.posts %}
+                        <tr class="post-title">
+                            <td colspan="2">
+                                <h4>
+                                    {{ post.title }}
+                                </h4>
+                                <time><h6>
+                                    {{ post.date | date_to_long_string }}
+                                </h6></time>
+                            </td>
+                        </tr>
+                        <tr class="post-content">
+                            {% if post.featured_image %}
+                            <td valign="top" >
+                                {{ post.content }}
+                            </td>
+                            <td class="side-image" valign="center" align="center" width="35%">
+                                <img src="{{ post.featured_image }}">
+                            </td>
+                            {% else %}
+                            <td width="100%" colspan="2" valign="top">
+                                {{ post.content }}
+                            </td>
+                            {% endif %}
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+{% if paginator.total_pages > 1 %}
+
+<section class="pagination">
+
+    {% if paginator.previous_page %}
+    <div class="pagination__prev">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="button button--large"><i class="fa fa-angle-left" aria-hidden="true"></i> <span>Newer Posts</span></a>
+    </div>
+    {% endif %}
+    {% if paginator.next_page %}
+    <div class="pagination__next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="button button--large"><span>Older Posts</span> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+    </div>
+    {% endif %}
+
+</section>
+
+{% endif %}

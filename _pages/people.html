@@ -1,0 +1,147 @@
+---
+layout: default
+title: People
+description: ACL Directory
+featured_image: /images/social.jpg
+permalink: /people/index.html
+---
+<section class="intro">
+    <div class="wrap" id="member">
+        <h1>People</h1>
+        <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0"  class="member-listing">
+            <tr>
+                <td>
+                    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+                        <!-- Faculty -->
+                        {% assign faculty = site.data.people | where: 'position', "Faculty" %}
+                        {% if faculty.size > 0 %}
+                        <tr class="member-heading">
+                            <td width="100%" colspan="2" valign="bottom">
+                                <h2>Faculty</h2>
+                            </td>
+                        </tr>
+                        {% for member in faculty %}
+                        <tr class="member-listing">
+                            <td width="15%" class="side-portrait">
+                                <div class="image-cropper">
+                                    {% if member.portrait %}
+                                    <img src="{{ member.portrait }}" width="100%">
+                                    {% else %}
+                                    <img src="/images/members/default.png" width="100%">
+                                    {% endif %}
+                                </div>
+                            </td>
+                            <td width="80%" valign="center">
+                                <h5>
+                                    {% if member.webpage %}
+                                        <a href="{{ member.webpage }}">{{ member.name }}</a>
+                                    {% else %}
+                                        {{ member.name }}
+                                    {% endif %}
+                                </h5>
+                                <p><i>{{ member.title }}</i></p>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        {% endif %}
+
+                        <!-- Non-faculty -->
+                        {% for position in site.data.settings.member_settings.positions %}
+                            {% assign people = site.members | where: 'position', position.type  | where: 'active', true | sort: "name", "first" %}
+                            {% if people.size > 0 %}
+                            <tr>
+                                <td width="100%" colspan="2" valign="bottom" class="member-heading">
+                                    <h2>{{ position.header }}</h2>
+                                </td>
+                            </tr>
+                            {% for member in people %}
+                            <tr>
+                                <td width="15%" class="side-portrait">
+                                    <div class="image-cropper">
+                                        <img src="{{ member.portrait }}" width="100%">
+                                    </div>
+                                </td>
+                                <td width="80%" valign="center" class="member-listing">
+                                    <h6>
+                                    <a href="{{ member.url }}">{{ member.name }}</a>
+                                    </h6>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+
+                        <!-- SuperUROPs -->
+                        {% assign urops = site.data.people | where: 'position', "SuperUROP" | where: 'active', true | sort: "name", "first" %}
+                        {% if urops.size > 0 %}
+                        <tr>
+                            <td width="100%" colspan="2" valign="bottom" class="member-heading">
+                                <h2>SuperUROPs</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" colspan="2" valign="center">
+                                <ul>
+                                {% for member in urops %}
+                                    <li>
+                                        <p class="member-listing">{{ member.name }}</p>
+                                    </li>
+                                {% endfor %}
+                                </ul>
+                            </td>
+                        </tr>
+                        {% endif %}
+
+                        <!-- UROPs -->
+                        {% assign urops = site.data.people | where: 'position', "UROP" | where: 'active', true | sort: "name", "first" %}
+                        {% if urops.size > 0 %}
+                        <tr>
+                            <td width="100%" colspan="2" valign="bottom" class="member-heading">
+                                <h2>UROPs</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" colspan="2" valign="center">
+                                <ul>
+                                {% for member in urops %}
+                                    <li>
+                                        <p class="member-listing">{{ member.name }}</p>
+                                    </li>
+                                {% endfor %}
+                                </ul>
+                            </td>
+                        </tr>
+                        {% endif %}
+
+                        <!-- Alum -->
+                        {% assign alum = site.members | where: 'active', false |sort: "name", "first" %}
+                        {% if alum.size > 0 %}
+                        <tr>
+                            <td width="100%" colspan="2" valign="bottom" class="member-heading">
+                                <h2>Alumni</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" colspan="2" valign="center">
+                                <ul>
+                                {% for member in alum %}
+                                    <li>
+                                        <a href="{{ member.url }}"><p class="member-listing">{{ member.name }}</p></a>
+                                    </li>
+                                {% endfor %}
+                                </ul>
+                            </td>
+                        </tr>
+                        {% endif %}
+
+                    </table>
+                </td>
+            </tr>
+        </table>
+    <p align="right">
+        <font size="2">
+            Credit to <a href="https://people.eecs.berkeley.edu/~barron/">Jon Barron</a> for the source code used in ACL member portfolios
+        </font>
+    </p>
+    </div>
+</section>

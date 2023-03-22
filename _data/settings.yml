@@ -1,0 +1,231 @@
+basic_settings:
+  site_title: Aerospace Controls Laboratory
+  site_tagline: Massachusetts Institute of Technology
+  favicon_folder: /images/favicons
+
+header_settings:
+  logo_image: /images/logos/acl_logo.svg
+  logo_width: 200
+  mit_logo: /images/logos/mit_logo.svg
+  mit_url: https://mit.edu/
+  lids_logo: /images/logos/lids_logo.png
+  lids_url: https://lids.mit.edu
+  aeroastro_logo: /images/logos/aeroastro_logo.svg
+  aeroastro_url: https://aeroastro.mit.edu/
+  accessibility_url: https://accessibility.mit.edu/
+  accessibility_str: Accessibility
+
+menu_settings:
+  menu_items:
+    - title: 'Home'
+      url: '/'
+    - title: 'People'
+      url: '/people'
+    - title: 'Projects'
+      url: '/projects'
+    - title: 'Publications'
+      url: '/publications'
+    - title: 'Contact'
+      url: '/contact'
+  quick_links:
+    - title: 'Prof. Jonathan How'
+      url: http://www.mit.edu/people/jhow/
+    - title: 'ACL Admin Assistant'
+      url: /people/bryt
+    - title: 'MIT AeroAstro'
+      url: https://aeroastro.mit.edu/
+    - title: 'YouTube Channel'
+      url: https://www.youtube.com/user/AerospaceControlsLab
+    - title: 'GitHub'
+      url: https://www.github.com/mit-acl
+    - title: 'ACL Wiki (internal)'
+      url: https://wikis.mit.edu/confluence/display/acl/Home
+
+member_settings:
+  positions:
+    - type: Admin
+      header: Administrative Assistants
+    - type: Research
+      header: Research Scientists
+    - type: Postdoc
+      header: Postdoctoral Scholars
+    - type: PhD
+      header: PhD Students
+    - type: Master
+      header: Master's Students
+    - type: Visiting
+      header: Visiting Scholars
+
+grid_settings:
+  overlay_opacity: 0.95
+  grid_spacing: 20
+
+contact_settings:
+  form_action: 'https://formspree.io/acl-contact@mit.edu'
+  confirmation_url: '/thanks'
+  email_subject: 'Contact form submission'
+  send_button_text: 'Send Message'
+
+social_settings:
+  facebook_url: ''
+  twitter_url: ''
+  instagram_url: ''
+  snapchat_url: ''
+  youtube_url: ''
+  google-plus_url: ''
+  vimeo_url: ''
+  pinterest_url: ''
+  medium_url: ''
+  quora_url: ''
+  amazon_url: ''
+  apple_url: ''
+  android_url: ''
+  tumblr_url: ''
+  dribbble_url: ''
+  behance_url: ''
+  deviantart_url: ''
+  github_url: ''
+  reddit_url: ''
+  flickr_url: ''
+  etsy_url: ''
+  kickstarter_url: ''
+  soundcloud_url: ''
+  spotify_url: ''
+  bandcamp_url: ''
+  linkedin_url: ''
+
+color_settings:
+  background_color: '#ffffff'
+  background_alt_color: '#F5F7FA'
+  text_dark_color: '#1f2328'
+  text_medium_color: '#56606d'
+  text_light_color: '#ABB7B7'
+  accent_color: '#0C5DF2'
+  border_color: '#dddddd'
+  overlay_background_color: '#0C5DF2'
+  overlay_background_color_one: '#448EF6'
+  overlay_background_color_two: '#09619D'
+  overlay_background_color_three: '#00204A'
+  overlay_text_color: '#ffffff'
+  overlay_accent_color: '#2A2F36'
+  error_color: '#D64541'
+
+font_settings:
+  font_embed: '<link href="https://fonts.googleapis.com/css?family=Montserrat:300,500" rel="stylesheet">'
+  title_font: '"Montserrat", sans-serif'
+  body_font: '"Montserrat", sans-serif'
+  regular_weight: 300
+  bold_weight: 500
+  site_title:
+    small_size: 25
+    medium_size: 35
+    large_size: 45
+    weight: 500
+    letter_spacing: -0.02
+  site_tagline:
+    small_size: 16
+    medium_size: 18
+    large_size: 20
+    weight: 500
+    letter_spacing: 0
+    line_height: 1.5
+  menu:
+    small_size: 30
+    medium_size: 15
+    large_size: 18
+    weight: 500
+    letter_spacing: 0
+  grid_item_title:
+    small_size: 22
+    medium_size: 26
+    large_size: 30
+    weight: 500
+    letter_spacing: -0.02
+  grid_item_subtitle:
+    small_size: 15
+    medium_size: 16
+    large_size: 17
+    weight: 300
+    letter_spacing: 0
+  h1:
+    small_size: 25
+    medium_size: 35
+    large_size: 45
+    weight: 500
+    letter_spacing: -0.02
+    line_height: 1.2
+  h2:
+    small_size: 22
+    medium_size: 30
+    large_size: 35
+    weight: 500
+    letter_spacing: -0.02
+    line_height: 1.2
+  h3:
+    small_size: 22
+    medium_size: 25
+    large_size: 30
+    weight: 500
+    letter_spacing: -0.02
+    line_height: 1.3
+  h4:
+    small_size: 18
+    medium_size: 22
+    large_size: 24
+    weight: 500
+    letter_spacing: 0
+    line_height: 1.6
+  h5:
+    small_size: 17
+    medium_size: 20
+    large_size: 22
+    weight: 500
+    letter_spacing: 0
+    line_height: 1.6
+  h6:
+    small_size: 17
+    medium_size: 20
+    large_size: 20
+    weight: 500
+    letter_spacing: 0
+    line_height: 1.6
+  p:
+    small_size: 16
+    medium_size: 18
+    large_size: 20
+    weight: 300
+    letter_spacing: 0
+    line_height: 1.6
+  blockquote:
+    small_size: 25
+    medium_size: 35
+    large_size: 45
+    weight: 300
+    letter_spacing: -0.02
+    line_height: 1.6
+  buttons:
+    weight: 500
+    letter_spacing: 0
+  blogpost:
+    small_size: 15
+    medium_size: 16
+    large_size: 18
+    weight: 300
+    letter_spacing: 0
+    line_height: 1.6
+
+advanced_settings:
+  ajax_loading: true
+  analytics_code: "
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=UA-47348607-4'></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-47348607-4');
+  </script>"
+  custom_styles: ""
+  header_js: ""
+  footer_js: ""

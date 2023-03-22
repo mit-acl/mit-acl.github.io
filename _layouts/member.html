@@ -1,0 +1,198 @@
+---
+layout: default
+---
+<section class="intro member-intro">
+    <div class="wrap" id="member">
+        <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
+            <tr>
+                <td>
+                    <!-- Intro -->
+                    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+                        <tr>
+                            <td width="62%" valign="middle">
+                                <div class="name-position">
+                                    <h2>
+                                        {{ page.name }}
+                                    </h2>
+                                    <br>
+                                    {% if page.active %}
+                                        <h4>
+                                            {{ page.title }}
+                                        </h4>
+                                        {% else %}
+                                        <h4 style="color: red">
+                                            Alum
+                                        </h4>
+                                        {% endif %}
+                                </div>
+                                <div class="image-cropper top-portrait">
+                                    <img src="{{ page.portrait }}" width="100%">
+                                </div>
+                                <div class="side-intro">
+                                <p>
+                                    {{ page.content }}
+                                </p>
+                                </div>
+                                <p align="center">
+                                    {% if page.links %}
+                                        {% for link in page.links %}
+                                        <a href="{{ link.url }}"> {{ link.type }} </a>
+                                        {% if forloop.last == false %}
+                                        &nbsp/&nbsp
+                                        {% endif %}
+                                        {% endfor %}
+                                        <br />
+                                    {% endif %}
+                                    {% if page.phone %}
+                                        {{ page.phone }}<br />
+                                    {% endif %}
+                                    {{ page.kerberos }} [at] mit [dot] edu
+                                    <br />
+                                    {{ page.office }}
+                                </p>
+                            </td>
+                            <td width="38%" class="side-portrait">
+                                <div class="image-cropper">
+                                    <img src="{{ page.portrait }}" width="100%">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- Education -->
+                    {% if page.education %}
+                    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+                        <tr>
+                            <td width="100%" valign="middle" style="padding-bottom: 0px">
+                                <h4>
+                                    Education
+                                </h4>
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+                        <tr>
+                            <td width="100%" valign="top">
+                                <ul>
+                                    {% for degree in page.education %}
+                                    <li>
+                                        {% if degree.current %}
+                                        <strong>{{ degree.type }}</strong> in {{ degree.study }}, {{ degree.school }}{% if degree.start %}, {{ degree.start }} - current{% endif %}
+                                        {% else %}
+                                        <strong>{{ degree.type }}</strong> in {{ degree.study }}, {{ degree.school }}{% if degree.graduation %}, {{ degree.graduation }}{% endif %}
+                                        {% endif %}
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                    {% endif %}
+
+                    <!-- Research Interests -->
+                    {% if page.interests %}
+                    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+                        <tr>
+                            <td width="100%" valign="middle" style="padding-bottom: 0px">
+                                <h4>
+                                    Research Interests
+                                </h4>
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+                        <tr>
+                            <td width="100%" valign="top">
+                                <ul>
+                                    {% for interest in page.interests %}
+                                    <li>
+                                        {{ interest }}
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                    {% endif %}
+
+                    <!-- Awards -->
+                    {% if page.awards %}
+                    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+                        <tr>
+                            <td width="100%" valign="middle" style="padding-bottom: 0px">
+                                <h4>
+                                    Awards
+                                </h4>
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+                        <tr>
+                            <td width="100%" valign="top">
+                                <ul>
+                                    {% for award in page.awards %}
+                                    <li>
+                                        <strong>{{ award.name }}</strong>, {{ award.date }}
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                    {% endif %}
+
+                    <!-- Projects -->
+                    {% assign projects = site.projects | where: 'authors', page.kerberos | sort: 'date' %}
+                    {% if projects.size > 0 %}
+                    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+                        <tr>
+                            <td>
+                                <h4>
+                                    Projects
+                                </h4>
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="100%" align="center" border="0" cellpadding="20">
+                        {% for project in projects reversed %}
+                        <tr>
+                            {% if project.featured_image %}
+                            <td width="25%"  class="side-image">
+                                <img src="{{ project.featured_image }}" alt="{{ project.image_alt }}" width="100%">
+                            </td>
+                            <td width="75%" valign="top">
+                            {% else %}
+                            <td width="100%" colspan="2" valign="top">
+                            {% endif %}
+                                <p>
+                                    <a href="{{ project.url }}">
+                                        <papertitle>{{ project.title }}</papertitle>
+                                    </a>
+                                    <br>
+                                    {% for author in project.authors %}
+                                        {% if author == page.kerberos %}
+                                            <strong>{{ page.name }}</strong>,
+                                        {% else %}
+                                            {% assign other_author = site.members | where: 'kerberos', author | first %}
+                                            {% if other_author %}
+                                                {{ other_author.name }},
+                                            {% else %}
+                                                {{ author }},
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endfor %} {{ project.date | date: "%Y"}}
+                                    <br />
+                                    <p>
+                                    {{ project.description }}
+                                    </p>
+                                </p>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>

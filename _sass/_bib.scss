@@ -1,0 +1,86 @@
+// - - - - - - - - - - - - - - - - - -
+
+// Bibliography
+
+// - - - - - - - - - - - - - - - - - -
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Bibliography
+
+#bibliography {
+	h1 {
+		display:inline-block
+
+	}
+
+	a {
+        color: #1772d0;
+        text-decoration:none;
+    }
+
+    a:focus, a:hover {
+        color: #f09228;
+        text-decoration:none;
+    }
+
+	li {	
+		list-style-type: none;
+		padding-bottom: 10px;
+		font-family: 'Lato', Verdana, Helvetica, sans-serif;
+		font-size: 12px;
+
+		@include mq(phonel) {
+			font-size: 14px;
+		}
+
+		@include mq(tabletp) {
+			font-size: 16px;
+		}
+	}
+
+	.bib-year {
+		margin-top: 40px;
+		margin-bottom: 20px;
+
+		h2 {
+			display: inline-block;
+		}
+	}
+
+	.return-link {
+		display: inline-block;
+		padding-left: 10px;
+	}
+
+	.bib-navigation {
+		display: block;
+		padding: 20px 0px 0px 0px;
+		margin-bottom: -25px;
+
+		ul {
+			display: inline-block;
+			margin: 0px;
+			height: 100%;
+			line-height: 100%;
+		}
+
+		li {
+			vertical-align: bottom;
+			float: left;
+			margin: 0px 10px 5px 0px;
+		}
+
+		#quick-links {
+			font-weight: $bold-weight;
+			font-size: $p-small;
+
+			@include mq(tabletp) {
+				font-size: $p-medium;
+			}
+
+			@include mq(laptop) {
+				font-size: $p-large;
+			}
+		}
+	}
+}

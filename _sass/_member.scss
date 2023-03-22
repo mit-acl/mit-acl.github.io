@@ -1,0 +1,155 @@
+/* Color scheme stolen from Sergey Karayev */
+.member-intro {
+    min-height: 100vh;
+    
+    a {
+        border-bottom: 2px solid $accent-color;
+    }
+}
+
+#member {
+    /*a {
+        color: #1772d0;
+        text-decoration:none;
+    }
+    a:focus, a:hover {
+        color: #f09228;
+        text-decoration:none;
+    }*/
+
+    body, td, th, tr, p, a {
+        font-family: 'Lato', Verdana, Helvetica, sans-serif;
+    }
+    ul {
+        font-family: 'Lato', Verdana, Helvetica, sans-serif;
+        list-style-type: none;
+    }
+    strong {
+        font-family: 'Lato', Verdana, Helvetica, sans-serif;
+    }
+    heading {
+        font-family: 'Lato', Verdana, Helvetica, sans-serif;
+    }
+    papertitle {
+        font-weight: 700;
+    }
+    h2 {
+        font-family: 'Lato', Verdana, Helvetica, sans-serif;
+        display: inline-block;
+    }
+    h4 {
+        display: inline;
+        padding-top: 0px;
+        font-family: 'Lato', Verdana, Helvetica, sans-serif;
+    }
+    span.highlight {
+        background-color: #ffffd0;
+    }
+    td {
+        padding: 20px;
+    }
+
+    .name-position {
+        text-align: center;
+    }
+
+    .one {
+        width: 160px;
+        height: 160px;
+        position: relative;
+    }
+    .two {
+        width: 160px;
+        height: 160px;
+        position: absolute;
+        transition: opacity .2s ease-in-out;
+        -moz-transition: opacity .2s ease-in-out;
+        -webkit-transition: opacity .2s ease-in-out;
+    }
+    .fade {
+         transition: opacity .2s ease-in-out;
+         -moz-transition: opacity .2s ease-in-out;
+         -webkit-transition: opacity .2s ease-in-out;
+    }
+    /* http://stackoverflow.com/questions/26421274/css-circular-cropping-of-rectangle-image */
+    .image-cropper {
+        position: relative;
+        overflow: hidden;
+        border-radius: 100%;
+        width: 100%;
+    }
+
+    .top-portrait {
+        display: block;
+        width: 50%;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        @include mq(tabletp) {
+            display: none;
+        }
+    }
+
+    .side-portrait, .side-image {
+        display: none;
+
+        @include mq(tabletp) {
+            display: table-cell;
+        }
+    }
+
+    .side-intro {
+        text-align: center;
+
+        @include mq(tabletp) {
+            text-align: left;
+        }
+    }
+
+
+    .member-listing {
+
+        h6 {
+            font-weight: 375;
+        }
+
+        h1, h2, h3, h4, h5, h6, p, ul, li, td, a {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        td {
+            padding: 10px 10px 10px 0px;
+
+            @include mq(tabletp) {
+                padding: 20px 20px 20px 0px;
+            }
+        }
+
+        .member-heading {
+            padding-top: 40px;
+            padding-bottom: 20px;
+            padding-left: 0px;
+        }
+
+        .image-cropper {
+            border-radius: 10%;
+        }
+
+        .side-portrait {
+            min-width: 125px;
+        }
+
+        .project-listing {
+            li {
+                padding: 5px 0px;
+                padding-left: 15px;
+                text-indent: -12px
+            }
+
+            li:before {
+                content: "-";
+            }
+        }
+    }
+}

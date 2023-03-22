@@ -1,0 +1,10 @@
+---
+---
+{{ reference }}
+{% if entry.url %}
+	<a href="{{ entry.url }}">[PDF]</a>
+{% endif %}
+<a href="javascript:toggleInfo('{{ entry.key }}');" class="js-no-ajax">[BibTeX]</a>
+<pre id="bib_{{ entry.key }}" class="bibtex noshow">
+{{ entry.bibtex }}
+</pre>

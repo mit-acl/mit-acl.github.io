@@ -1,0 +1,96 @@
+site: Aerospace Controls Laboratory
+
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  projects:
+    output: true
+    permalink: /projects/:slug
+  members:
+    output: true
+    permalink: /people/:title
+  posts:
+    output: false
+  pinned_posts:
+    output: false
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+      description: "The Aerospace Controls Lab @ MIT"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      featured_image: "/images/social.jpg"
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
+      type: "projects"
+    values:
+      featured_image: "/images/social.jpg"
+      layout: "project"
+  - scope:
+      path: ""
+      type: "members"
+    values:
+      layout: "member"
+      portrait: "/images/members/default.png"
+
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-scholar
+
+paginate: 6
+paginate_path: "/page:num/"
+  
+scholar:
+  use_raw_bibtex_entry: true
+  bibliography: ACL_Publications.bib
+  style: _bibliography/aiaa
+
+  bibliography_template: bib_link
+
+  bibliography_list_tag: ul
+  bibliography_item_tag: li
+
+  sort_by: year, month
+  order: descending
+  # group_by: type
+  bibliography_group_tag: 'h3,h4,h5'
+
+  missing_reference: ''
+
+  type_names:
+    article: "Articles"
+    incollections: "Collections"
+    periodical: "Periodicals"
+  type_aliases: 
+    conference: inproceedings
+    proceedings: inproceedings
+    other: misc
+    inbook: incollections
+    online: misc
+  type_order: ['article', 'inproceedings', 'theses']

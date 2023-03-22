@@ -1,0 +1,80 @@
+---
+layout: default
+title: Projects
+description: A minimal, fixed sidebar grid portfolio Jekyll theme.
+featured_image: /images/social.jpg
+permalink: '/projects/index.html'
+---
+
+{% assign active_projects = site.projects | where: 'active', 'true' %}
+{% assign past_projects = site.projects | where: 'active', false %}
+
+<section class="portfolio">
+
+	<div class="content-wrap portfolio-wrap">
+
+		{% for project in active_projects reversed %}
+
+		<div class="portfolio-item">
+
+			<a class="portfolio-item__link" href="{{ project.url }}">
+
+				<div class="portfolio-item__image">
+					{% if project.featured_image %}
+						<img src="{{ project.featured_image  }}" alt="{{ project.title }}">
+					{% else %}
+						<img src="{% cycle '/images/demo/demo-square.jpg', '/images/demo/demo-landscape.jpg', '/images/demo/demo-landscape-2.jpg' %}" alt="{{ project.title }}">
+					{% endif %}
+				</div>
+
+				<div class="portfolio-item__content color_{% cycle 'one', 'two', 'three' %}">
+					<div class="portfolio-item__info">
+						<h2 class="portfolio-item__title">{{ project.title }}</h2>
+						<p class="portfolio-item__subtitle">{{ project.subtitle }}</p>
+					</div>
+				</div>
+
+			</a>
+
+		</div>
+
+		{% endfor %}
+
+	</div>
+
+	{% if past_projects.size > 0 %}
+		<hr class="project-break">
+	{% endif %}
+
+</section>
+
+{% if past_projects.size > 0 %}
+
+<section class="intro past_projects">
+
+	<div class="wrap" id="member">
+		
+		<table width="100%" border="0" align="center" cellspacing="0" cellpadding="0"  class="member-listing">
+            <tr>
+                <td width="100%" colspan="2" valign="bottom">
+                    <h2>Previous projects</h2>
+                </td>
+            </tr>
+            <tr>
+                <td width="100%" colspan="2" valign="center">
+                    <ul class="project-listing">
+                    {% for project in past_projects reversed %}
+                        <li>
+                            <a href="{{ project.url }}">{{ project.title }}</a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+	</div>
+
+</section>
+
+{% endif %}

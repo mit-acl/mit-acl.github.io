@@ -1,0 +1,42 @@
+##############################
+# This page should only be   #
+# used for members w/o their #
+# own page (faculty/urop)    #
+##############################
+
+# Faculty 
+- kerberos: jhow
+  name: Prof. Jonathan P. How
+  position: Faculty
+  title: Richard Cockburn Maclaurin Professor of Aeronautics and Astronautics, MIT   
+  office: 31-233
+  webpage: http://www.mit.edu/people/jhow/
+  portrait: /images/members/s_jon2.gif
+  active: true
+
+# UROPs
+
+- kerberos: sni
+  name: Susan Ni
+  position: UROP
+  active: false
+
+- kerberos: mnasir
+  name: Mohammed Nasir
+  position: UROP
+  active: false
+
+- kerberos: rewang
+  name: Rose Wang
+  position: SuperUROP
+  active: false
+
+- kerberos: jjgraves
+  name: Josh Graves
+  position: UROP
+  active: false
+
+- kerberos: bckoenig
+  name: Ben Koenig
+  position: UROP
+  active: false

@@ -1,0 +1,44 @@
+---
+layout: default
+title: Publications
+description: A collection of published works from ACL
+featured_image: /images/social.jpg
+permalink: /publications/index.html
+---
+<!-- Settings for which publications to display -->
+{% assign current_year = site.time | date: "%Y" %}
+{% assign latest_year = current_year %} <!-- latest_year = current_year -->
+{% assign earliest_year = 1990 %}
+
+<section class="intro" id="top">
+
+	<div class="wrap" id="bibliography">
+		<h1>Publications</h1>
+		<div class="bib-navigation">
+			<ul>
+				<li><span id="quick-links">Quick links:</span></li>
+				{% for year in (earliest_year..latest_year) reversed %}
+					{% assign remainder = year | modulo: 5 %}
+					{% if remainder == 0 and forloop.first == false %}
+					<li>
+						<a href="#bib-year-{{year}}" class="js-no-ajax">{{ year }}</a>
+					</li>
+					{% else %}
+						{% continue %}
+					{% endif %}
+				{% endfor %}
+			</ul>
+		</div>
+
+		{% for year in (earliest_year..latest_year) reversed %}
+			<div class="bib-year" id="bib-year-{{ year }}">
+				<h2>{{year}}</h2>
+				{% if forloop.first == false %}
+				<a href="#top" class="js-no-ajax"><span class="return-link">(Return to top)</span></a>
+				{% endif %}
+				{% bibliography --query @*[year~={{year}}] --template bib_link %}
+			</div>
+		{% endfor %}
+	</div>
+
+</section>
