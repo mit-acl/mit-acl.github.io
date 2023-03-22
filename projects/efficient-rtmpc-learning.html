@@ -1,0 +1,423 @@
+<!doctype html>
+
+<html class="no-js" lang="en">
+
+<head>
+
+
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+	Aerospace Controls Laboratory
+
+	Index Theme by https://jekyllthemes.io
+	Premium + free Jekyll themes for your blog or website.
+
+	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+	<link rel="manifest" href="/images/favicons/site.webmanifest">
+	<link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="/images/favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#ffc40d">
+	<meta name="msapplication-config" content="/images/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- Page Info -->
+	<title>Efficient Learning of Neural Network Policies via Imitation Learning and Tube MPC - Aerospace Controls Laboratory</title>
+
+	<meta name="description" content="Use a Robust Tube variant of MPC to efficiently learn Neural Network policies via Imitation Learning.">
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Efficient Learning of Neural Network Policies via Imitation Learning and Tube MPC - Aerospace Controls Laboratory">
+	<meta name="twitter:description" content="Use a Robust Tube variant of MPC to efficiently learn Neural Network policies via Imitation Learning.">
+	<meta name="twitter:image:src" content="/images/projects/efficient_rtmpc_learning_cover_img.png">
+
+	<!-- Facebook OpenGraph -->
+	<meta property="og:title" content="Efficient Learning of Neural Network Policies via Imitation Learning and Tube MPC - Aerospace Controls Laboratory" />
+	<meta property="og:description" content="Use a Robust Tube variant of MPC to efficiently learn Neural Network policies via Imitation Learning." />
+	<meta property="og:image" content="/images/projects/efficient_rtmpc_learning_cover_img.png" />
+
+	
+	<!-- Font Embed Code -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,500" rel="stylesheet">
+	
+
+	<!-- Styles -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/css/style.css">
+	<!-- Icons -->
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/solid.js" integrity="sha384-GXi56ipjsBwAe6v5X4xSrVNXGOmpdJYZEEh/0/GqJ3JTHsfDsF8v0YQvZCJYAiGu" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/brands.js" integrity="sha384-0inRy4HkP0hJ038ZyfQ4vLl+F4POKbqnaUB6ewmU4dWP0ki8Q27A0VFiVRIpscvL" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/fontawesome.js" integrity="sha384-NY6PHjYLP2f+gL3uaVfqUZImmw71ArL9+Roi9o+I4+RBqArA2CfW1sJ1wkABFfPe" crossorigin="anonymous"></script>
+
+	
+	<!-- Custom Styles -->
+	<style></style>
+	
+
+	
+	<!-- Analytics Code -->
+	 <!-- Global site tag (gtag.js) - Google Analytics --> <script async src='https://www.googletagmanager.com/gtag/js?id=UA-47348607-4'></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+gtag('config', 'UA-47348607-4'); </script>
+	
+
+	
+	<!-- Extra Header JS Code -->
+	
+	
+	
+</head>
+
+
+<body class="loading ajax-loading" data-site-url="" data-page-url="/projects/efficient-rtmpc-learning">
+
+
+	<header class="header">
+
+	<div class="header__content">
+
+		
+		<a href="/" class="header__logo">
+			<img src="/images/logos/acl_logo.svg" class="header__logo__img">
+		</a>
+		
+
+		<h1 class="header__tagline">Aerospace Controls Laboratory</h1>
+
+		<div class="menu">
+			<div class="menu__toggle js-menu-toggle">
+				<div class="menu__toggle__icon"><span></span></div>
+			</div>
+			<div class="menu__wrap">
+				<ul class="menu__list">
+					
+					<li class="menu__list__item">
+						<a href="/" class="menu__list__item__link menu__list__item__resize">Home</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/people" class="menu__list__item__link menu__list__item__resize">People</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/projects" class="menu__list__item__link menu__list__item__resize">Projects</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/publications" class="menu__list__item__link menu__list__item__resize">Publications</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/contact" class="menu__list__item__link menu__list__item__resize">Contact</a>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+
+		<div class="projects-menu">
+			<ul class="menu__list">
+				
+				<li class="menu__list__item">
+					<a href="http://www.mit.edu/people/jhow/" class="menu__list__item__link menu__list__item__resize">Prof. Jonathan How</a>
+				</li>
+				
+				<li class="menu__list__item">
+					<a href="/people/bryt" class="menu__list__item__link menu__list__item__resize">ACL Admin Assistant</a>
+				</li>
+				
+				<li class="menu__list__item">
+					<a href="https://aeroastro.mit.edu/" class="menu__list__item__link menu__list__item__resize">MIT AeroAstro</a>
+				</li>
+				
+				<li class="menu__list__item">
+					<a href="https://www.youtube.com/user/AerospaceControlsLab" class="menu__list__item__link menu__list__item__resize">YouTube Channel</a>
+				</li>
+				
+				<li class="menu__list__item">
+					<a href="https://www.github.com/mit-acl" class="menu__list__item__link menu__list__item__resize">GitHub</a>
+				</li>
+				
+				<li class="menu__list__item">
+					<a href="https://wikis.mit.edu/confluence/display/acl/Home" class="menu__list__item__link menu__list__item__resize">ACL Wiki (internal)</a>
+				</li>
+				
+
+			</ul>
+		</div>
+
+		<div class="header__lower">
+
+			<div class="footer__logo__row">
+				<a href="https://aeroastro.mit.edu/" class="footer__logo"><img src=" /images/logos/aeroastro_logo.svg" class="footer__logo__img"></a>
+				<a href="https://lids.mit.edu" class="footer__logo"><img src="/images/logos/lids_logo.png" class="footer__logo__img"></a>
+			</div>
+
+			<div class="footer__logo__row2">
+				<a href="https://mit.edu/" class="footer__logo"><img src=" /images/logos/mit_logo.svg" class="footer__logo__img"></a>
+			</div>
+
+			<ul class="socials">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</ul>
+
+			<div class="footer__accessibility">
+				<a href="https://accessibility.mit.edu/">Accessibility</a>
+			</div>
+
+			<div class="footer__copyright">
+				<span>© 2023 Aerospace Controls Laboratory</span>
+			</div>
+
+		</div>
+
+	</div>
+
+</header>
+
+
+
+	<div class="loader"><svg width="120" height="30" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="15"><animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="60" cy="15" r="9" fill-opacity="0.3"><animate attributeName="r" from="9" to="9" begin="0s" dur="0.8s" values="9;15;9" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="0.5" to="0.5" begin="0s" dur="0.8s" values=".5;1;.5" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="105" cy="15" r="15"><animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite" /></circle></svg></div>
+
+	<div class="page-loader"></div>
+
+	
+	<div class="page">
+
+		<div class="page__content" data-page-title="Efficient Learning of Neural Network Policies via Imitation Learning and Tube MPC - Aerospace Controls Laboratory">
+
+			<section class="intro">
+
+	<div class="wrap">
+
+		<h1>Efficient Learning of Neural Network Policies via Imitation Learning and Tube MPC</h1>
+		<p>
+			
+				
+				
+					<a href="/people/atagliab">Andrea Tagliabue</a>,
+				
+			
+				
+				
+					<a href="/people/dkkim93">Dong-Ki Kim</a>,
+				
+			
+				
+				
+					<a href="/people/mfe">Michael Everett</a>
+				
+			
+		</p>
+
+	</div>
+
+</section>
+
+<section class="single">
+
+	<div class="wrap">
+
+		<p><img src="/images/projects/efficient_rtmpc_learning_experiment.jpg" alt="Experimental evaluation of a learned neural network policy for trajectory tracking." width="800" /></p>
+
+<h2 id="about">About</h2>
+
+<p>Imitation Learning (IL) can generate computationally efficient policies from demonstrations provided by computationally expensive model-based algorithms, such as Model Predictive Control (MPC). However, commonly employed IL methods are often data-inefficient, requiring the collection of a large number of demonstrations and producing policies with limited robustness to uncertainties.</p>
+
+<h2 id="learning-from-tube-model-predictive-control">Learning from Tube Model Predictive Control</h2>
+<p><img src="/images/projects/efficient_rtmpc_learning_approach.png" alt="Pipeline for efficient learning of neural network policies from Tube MPC." width="800" /></p>
+
+<p>In the first part of this project, we address the robustness and demonstration efficiency challenges of IL by generating a Robust Tube variant of MPC (RTMPC) to collect demonstrations robust to process uncertainties (e.g., wind). We additionally leverage properties from the tube to introduce a data augmentation method that enables high demonstration-efficiency, capable of compensating the “distribution shifts” typically encountered in IL. Our approach opens to the possibility of zero-shot transfer from a single demonstration collected in a nominal domain, such as a simulation or a robot in a lab/controlled environment, to a domain with bounded model errors/perturbations. Experimental evaluations performed on a trajectory tracking MPC for a multirotor show that our method outperforms strategies commonly employed in IL, such as DAgger and Domain Randomization, in terms of demonstration-efficiency and robustness to perturbations unseen during training.</p>
+
+<h2 id="sensorimotor-policy-learning-using-3d-meshes">Sensorimotor Policy Learning using 3D Meshes</h2>
+<p><img src="/images/projects/efficient_rtmpc_learning_sensorimotor.png" alt="Pipeline to efficiently learn robust sensorimotor policies, using output feedback Tube MPC and a 3D mesh of the environment." width="800" />
+<img src="/images/projects/efficient_rtmpc_learning_sensorimotor.png" alt="" /></p>
+
+<p>In the second part of this project, we additionally introduce the ability to efficiently learn robust <em>sensorimotor</em> policies, capable to control a mobile robot directly from noisy, high-dimensional sensory observations, such as images. Key to our approach is to combine IL with an output feedback RTMPC to generate demonstrations robust to the effects of process <em>and</em> sensing uncertainties (e.g., noise, drifts), and co-generate a data augmentation strategy to augment the demonstrations collected by IL methods. We tailor our approach to the task of learning a trajectory tracking <em>visuomotor</em> policy for an aerial robot, leveraging a 3D mesh of the environment as part of the data augmentation process. We numerically demonstrate that our method can learn to control a robot from images using a single demonstration—a two-orders of magnitude improvement in demonstration efficiency compared to existing IL methods.</p>
+
+<h3 id="sponsor">Sponsor</h3>
+
+<p>This work is funded by the Air Force Office of Scientific Research MURI FA9550-19-1-0386</p>
+
+<hr />
+
+<h3 id="video">Video</h3>
+<iframe width="448" height="252" src="https://www.youtube.com/embed/28zQFktJIqg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+
+		
+			<h3>Related Publications</h3>
+			<ul class="papers">
+				
+					<li>
+						
+
+
+					</li>
+				
+					<li>
+						
+
+
+					</li>
+				
+			</ul>
+		
+	</div>
+
+</section>
+
+		</div>
+
+	</div>
+
+
+	<footer class="footer">
+
+	<ul class="socials">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</ul>
+
+	<div class="footer__logo__row__mobile">
+		<a href="https://lids.mit.edu" class="footer__logo"><img src="/images/logos/lids_logo.png" class="footer__logo__img"></a>
+		<a href="https://aeroastro.mit.edu/" class="footer__logo"><img src=" /images/logos/aeroastro_logo.svg" class="footer__logo__img"></a>
+		<a href="https://mit.edu/" class="footer__logo" style="max-width: 35%"><img src=" /images/logos/mit_logo.svg" class="footer__logo__img"></a>
+	</div>
+
+	<div class="footer__accessibility">
+		<a href="https://accessibility.mit.edu/">Accessibility</a>
+	</div>
+
+	<div class="footer__copyright">
+		<span>© 2023 Aerospace Controls Laboratory</span>
+	</div>
+
+</footer>
+
+
+
+	<!-- Javascript Assets -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="/js/index-min.js"></script>
+
+	
+	<!-- Extra Footer JS Code -->
+	
+	
+
+
+</body>
+
+</html>

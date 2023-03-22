@@ -1,0 +1,438 @@
+<!doctype html>
+
+<html class="no-js" lang="en">
+
+<head>
+
+
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+	Aerospace Controls Laboratory
+
+	Index Theme by https://jekyllthemes.io
+	Premium + free Jekyll themes for your blog or website.
+
+	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+	<link rel="manifest" href="/images/favicons/site.webmanifest">
+	<link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="/images/favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#ffc40d">
+	<meta name="msapplication-config" content="/images/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- Page Info -->
+	<title>Gradient Projection Anti-windup Scheme - Aerospace Controls Laboratory</title>
+
+	<meta name="description" content="We propose the gradient projection anti-windup (GPAW) scheme for general nonlinear systems comprising possibly nonlinear saturated plants and nonlinear controllers.">
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Gradient Projection Anti-windup Scheme - Aerospace Controls Laboratory">
+	<meta name="twitter:description" content="We propose the gradient projection anti-windup (GPAW) scheme for general nonlinear systems comprising possibly nonlinear saturated plants and nonlinear controllers.">
+	<meta name="twitter:image:src" content="/images/projects/gpaw_1.png">
+
+	<!-- Facebook OpenGraph -->
+	<meta property="og:title" content="Gradient Projection Anti-windup Scheme - Aerospace Controls Laboratory" />
+	<meta property="og:description" content="We propose the gradient projection anti-windup (GPAW) scheme for general nonlinear systems comprising possibly nonlinear saturated plants and nonlinear controllers." />
+	<meta property="og:image" content="/images/projects/gpaw_1.png" />
+
+	
+	<!-- Font Embed Code -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,500" rel="stylesheet">
+	
+
+	<!-- Styles -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/css/style.css">
+	<!-- Icons -->
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/solid.js" integrity="sha384-GXi56ipjsBwAe6v5X4xSrVNXGOmpdJYZEEh/0/GqJ3JTHsfDsF8v0YQvZCJYAiGu" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/brands.js" integrity="sha384-0inRy4HkP0hJ038ZyfQ4vLl+F4POKbqnaUB6ewmU4dWP0ki8Q27A0VFiVRIpscvL" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/fontawesome.js" integrity="sha384-NY6PHjYLP2f+gL3uaVfqUZImmw71ArL9+Roi9o+I4+RBqArA2CfW1sJ1wkABFfPe" crossorigin="anonymous"></script>
+
+	
+	<!-- Custom Styles -->
+	<style></style>
+	
+
+	
+	<!-- Analytics Code -->
+	 <!-- Global site tag (gtag.js) - Google Analytics --> <script async src='https://www.googletagmanager.com/gtag/js?id=UA-47348607-4'></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+gtag('config', 'UA-47348607-4'); </script>
+	
+
+	
+	<!-- Extra Header JS Code -->
+	
+	
+	
+</head>
+
+
+<body class="loading ajax-loading" data-site-url="" data-page-url="/projects/gradient-projection-anti-windup">
+
+
+	<header class="header">
+
+	<div class="header__content">
+
+		
+		<a href="/" class="header__logo">
+			<img src="/images/logos/acl_logo.svg" class="header__logo__img">
+		</a>
+		
+
+		<h1 class="header__tagline">Aerospace Controls Laboratory</h1>
+
+		<div class="menu">
+			<div class="menu__toggle js-menu-toggle">
+				<div class="menu__toggle__icon"><span></span></div>
+			</div>
+			<div class="menu__wrap">
+				<ul class="menu__list">
+					
+					<li class="menu__list__item">
+						<a href="/" class="menu__list__item__link menu__list__item__resize">Home</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/people" class="menu__list__item__link menu__list__item__resize">People</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/projects" class="menu__list__item__link menu__list__item__resize">Projects</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/publications" class="menu__list__item__link menu__list__item__resize">Publications</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/contact" class="menu__list__item__link menu__list__item__resize">Contact</a>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+
+		<div class="projects-menu">
+			<ul class="menu__list">
+				
+				<li class="menu__list__item">
+					<a href="http://www.mit.edu/people/jhow/" class="menu__list__item__link menu__list__item__resize">Prof. Jonathan How</a>
+				</li>
+				
+				<li class="menu__list__item">
+					<a href="/people/bryt" class="menu__list__item__link menu__list__item__resize">ACL Admin Assistant</a>
+				</li>
+				
+				<li class="menu__list__item">
+					<a href="https://aeroastro.mit.edu/" class="menu__list__item__link menu__list__item__resize">MIT AeroAstro</a>
+				</li>
+				
+				<li class="menu__list__item">
+					<a href="https://www.youtube.com/user/AerospaceControlsLab" class="menu__list__item__link menu__list__item__resize">YouTube Channel</a>
+				</li>
+				
+				<li class="menu__list__item">
+					<a href="https://www.github.com/mit-acl" class="menu__list__item__link menu__list__item__resize">GitHub</a>
+				</li>
+				
+				<li class="menu__list__item">
+					<a href="https://wikis.mit.edu/confluence/display/acl/Home" class="menu__list__item__link menu__list__item__resize">ACL Wiki (internal)</a>
+				</li>
+				
+
+			</ul>
+		</div>
+
+		<div class="header__lower">
+
+			<div class="footer__logo__row">
+				<a href="https://aeroastro.mit.edu/" class="footer__logo"><img src=" /images/logos/aeroastro_logo.svg" class="footer__logo__img"></a>
+				<a href="https://lids.mit.edu" class="footer__logo"><img src="/images/logos/lids_logo.png" class="footer__logo__img"></a>
+			</div>
+
+			<div class="footer__logo__row2">
+				<a href="https://mit.edu/" class="footer__logo"><img src=" /images/logos/mit_logo.svg" class="footer__logo__img"></a>
+			</div>
+
+			<ul class="socials">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</ul>
+
+			<div class="footer__accessibility">
+				<a href="https://accessibility.mit.edu/">Accessibility</a>
+			</div>
+
+			<div class="footer__copyright">
+				<span>© 2023 Aerospace Controls Laboratory</span>
+			</div>
+
+		</div>
+
+	</div>
+
+</header>
+
+
+
+	<div class="loader"><svg width="120" height="30" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="15"><animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="60" cy="15" r="9" fill-opacity="0.3"><animate attributeName="r" from="9" to="9" begin="0s" dur="0.8s" values="9;15;9" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="0.5" to="0.5" begin="0s" dur="0.8s" values=".5;1;.5" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="105" cy="15" r="15"><animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite" /></circle></svg></div>
+
+	<div class="page-loader"></div>
+
+	
+	<div class="page">
+
+		<div class="page__content" data-page-title="Gradient Projection Anti-windup Scheme - Aerospace Controls Laboratory">
+
+			<section class="intro">
+
+	<div class="wrap">
+
+		<h1>Gradient Projection Anti-windup Scheme</h1>
+		<p>
+			
+				
+				
+					<a href="/people/justinteo">Teo Chun Sang</a>
+				
+			
+		</p>
+
+	</div>
+
+</section>
+
+<section class="single">
+
+	<div class="wrap">
+
+		<p>It is a well-recognized fact that control saturation affects virtually all practical control systems. It induces performance degradation, and possibly instability. Anti-windup compensation is one of two main approaches to mitigate the negative effects of windup, and is conceptually and practically appealing due to its amenability to be retrofitted to existing control designs. Given some nominal controller designed without consideration of saturation effects, the anti-windup problem is to design controller modifications such that when the saturation constraints are not triggered, nominal performance is recovered; and when some controls saturate, nominal performance is recovered as much as possible.</p>
+
+<p>Due to its practical importance, anti-windup compensation is a well researched topic. However, the majority of the literature addresses saturated linear time invariant (LTI) plants driven by LTI controllers. For nonlinear systems with either saturated nonlinear plants and/or nonlinear controllers, the literature is very sparse, and is dominated by anti-windup schemes for feedback linearizable nonlinear systems driven by a controller obtained through feedback linearization (or equivalently, dynamic inversion). Indeed, it was recognized in a recent <a href="http://dx.doi.org/10.1049/iet-cta:20070435">survey paper</a> that anti-windup compensation for nonlinear systems is still largely an open problem.</p>
+
+<p>We propose the gradient projection anti-windup (GPAW) scheme for general nonlinear systems comprising possibly nonlinear saturated plants and nonlinear controllers. The GPAW scheme is a generalization of the well-known <a href="http://dx.doi.org/10.1007/1-84628-586-0_3">conditional integration method</a> for proportional-integral-derivative (PID) type controllers to general multi-input-multi-output (MIMO) nonlinear controllers. The key mechanism used for this generalization is an extension of <a href="http://www.jstor.org/stable/2098960">Rosen’s gradient projection method for nonlinear programming</a> to continuous-time. The GPAW scheme uses the derived projection operator to project the controller state to the unsaturated region in the controller state space. This is illustrated below, where the vector field of the nominal controller is projected onto the unsaturated region “K” to yield the vector field of the GPAW compensated controller.</p>
+
+<p><img src="/images/projects/gpaw_1.png" alt="" /></p>
+
+<p>A unique property of the GPAW scheme (due to projection) is that it achieves <strong>controller state-output consistency</strong>, which is an implicit objective for a large portion of existing anti-windup schemes. It has a single symmetric positive definite matrix parameter, and its realization is independent of the plant’s description (rendering it suitable, in particular, for adaptive controllers). The GPAW compensated controller is defined by the online solution to either a combinatorial optimization subproblem, a convex quadratic program, or a projection onto a convex polyhedral cone. For systems with a small number of outputs, closed-form expressions may be derived, eliminating the need to solve any optimzation problems online and yielding significant savings in computation.</p>
+
+<p>For a saturated first order LTI plant driven by a first order LTI controller, strong results on GPAW compensation have been obtained. In particular, for this simple system, GPAW compensation can only maintain/enlarge the region of attraction (ROA) of the uncompensated system. This result is <strong>independent of any Lyapunov function</strong>, and valid for all plant and controller parameters that ensures stability of the unconstrained (or unsaturated) system, a standard assumption in the anti-windup framework. Numerical results shown below, apart from illustrating the ROA containment, also indicates a need to consider <strong>asymmetric</strong> saturation constraints for saturated systems in general.</p>
+
+<div class="gallery" data-columns="2">
+	<img src="/images/projects/gpaw_2.png" />
+	<img src="/images/projects/gpaw_3.png" />
+</div>
+
+<p>The results above indicate that ROA estimates for the symmetric saturation case are in general invalid for the asymmetric case, <strong>even when the saturation constraints are relaxed</strong>.</p>
+
+<p>Current and future work is on extending the stability (ROA) results to more general systems.</p>
+
+
+		
+			<h3>Related Publications</h3>
+			<ul class="papers">
+				
+					<li>
+						
+<span id="Teo11_PhD">Teo, C. S. J., “<b>Gradient Projection Anti-windup Scheme</b>,” PhD thesis, Massachusetts Institute of Technology, Department of Aeronautics and Astronautics, 2011.</span>
+
+					</li>
+				
+					<li>
+						
+<span id="Teo09_CDC">Teo, J., and How, J. P., “<b>Anti-windup compensation for nonlinear systems via gradient projection: Application to adaptive control</b>,” <i>IEEE Conference on Decision and Control (CDC)</i>, Shanghai, China: 2009, pp. 6910–6916.</span>
+
+					</li>
+				
+					<li>
+						
+<span id="Teo10_ACC">Teo, J., and How, J. P., “<b>Analysis of Gradient Projection Anti-windup Scheme</b>,” <i>American Control Conference (ACC)</i>, Baltimore, MD: 2010.</span>
+
+					</li>
+				
+					<li>
+						
+<span id="Teo10_ACC_GPAW">Teo, J., and How, J. P., “<b>Geometric Properties of Gradient Projection Anti-windup Compensated Systems</b>,” <i>American Control Conference (ACC)</i>, Baltimore, MD: 2010.</span>
+
+					</li>
+				
+					<li>
+						
+<span id="TeoCDC11">Justin Teo, and Jonathan P. How, “<b>Region of Attraction Comparison for Gradient Projection Anti-windup Compensated Systems</b>,” <i>Proc. 50th IEEE Conf. Decision and Control &amp; European Control Conf.</i>, Orlando, FL: 2011, pp. 5509–5515.</span>
+
+					</li>
+				
+					<li>
+						
+<span id="Teo10_MITTR">Teo, J., and How, J. P., <b><i>Gradient Projection Anti-windup Scheme on Constrained Planar LTI Systems</i></b>, Cambridge, MA: Massachusetts Institute of Technology, 2010.</span>
+
+					</li>
+				
+					<li>
+						
+<span id="Teo10_MITTR_GPAW">Teo, J., and How, J. P., <b><i>Corrections to Geometric Properties of Gradient Projection Anti-windup Compensated Systems</i></b>, Cambridge, MA: Massachusetts Institute of Technology, 2010.</span>
+
+					</li>
+				
+			</ul>
+		
+	</div>
+
+</section>
+
+		</div>
+
+	</div>
+
+
+	<footer class="footer">
+
+	<ul class="socials">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</ul>
+
+	<div class="footer__logo__row__mobile">
+		<a href="https://lids.mit.edu" class="footer__logo"><img src="/images/logos/lids_logo.png" class="footer__logo__img"></a>
+		<a href="https://aeroastro.mit.edu/" class="footer__logo"><img src=" /images/logos/aeroastro_logo.svg" class="footer__logo__img"></a>
+		<a href="https://mit.edu/" class="footer__logo" style="max-width: 35%"><img src=" /images/logos/mit_logo.svg" class="footer__logo__img"></a>
+	</div>
+
+	<div class="footer__accessibility">
+		<a href="https://accessibility.mit.edu/">Accessibility</a>
+	</div>
+
+	<div class="footer__copyright">
+		<span>© 2023 Aerospace Controls Laboratory</span>
+	</div>
+
+</footer>
+
+
+
+	<!-- Javascript Assets -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="/js/index-min.js"></script>
+
+	
+	<!-- Extra Footer JS Code -->
+	
+	
+
+
+</body>
+
+</html>
