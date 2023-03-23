@@ -1,7 +1,7 @@
 ---
 active: true
 kerberos: jpedlow
-name: Jacqueline Pedlow
+name: Jacqueline Ankenbauer
 office: TBD
 portrait: /images/members/jpedlow.jpg
 position: Master 
