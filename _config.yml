@@ -94,3 +94,10 @@ scholar:
     inbook: incollections
     online: misc
   type_order: ['article', 'inproceedings', 'theses']
+
+exclude:
+    - Gemfile
+    - Gemfile.lock
+    - README.md
+    - build_website.bash
+    - docker

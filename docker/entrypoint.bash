@@ -2,5 +2,5 @@
 
 source ~/.bashrc
 cd ~/bridge
-bundle update
+#bundle update
 bundle exec jekyll build

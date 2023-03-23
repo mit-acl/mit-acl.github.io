@@ -11,5 +11,9 @@ RUN apt-get autoremove -y
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
 
+COPY Gemfile /Gemfile
+SHELL ["/bin/bash", "-c"]
+RUN source ~/.bashrc && bundle update
+
 COPY ./entrypoint.bash /entrypoint.bash
 ENTRYPOINT ["/entrypoint.bash"]
