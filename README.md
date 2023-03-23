@@ -33,3 +33,7 @@ Reach out to the current ACL webmaster via Slack and provide the following:
 1. A headshot (i.e. `.jpg` or `.png`)
 2. Markdown providing your information. [(See this example.)](https://raw.githubusercontent.com/mit-acl/mit-acl.github.io/master/_members/kavehf.md)
 Alternatively, if you're comfortable with GitHub/GitHub pages, you're welcome to make the changes yourself and submit a pull request.
+
+## Notes
+* Citations are stored in [this repo](https://github.com/mit-acl/bibliography).
+* Static site builds are stored on [this branch](https://github.com/mit-acl/mit-acl.github.io/tree/gh-pages).
