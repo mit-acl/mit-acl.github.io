@@ -1,6 +1,6 @@
 # mit-acl.github.io
 
-Website for 
+Jekyll website for Aerospace Controls Laboratory at MIT.
 
 ## Setup
 We build the static site locally and then push it to the `gh-pages` branch for hosting. This requires you clone the repository and `_site` folder correctly.
@@ -17,12 +17,17 @@ git submodule init
 git submodule update
 ```
 
-## Publishing the site
+## Easy build
+- Update [bibliography repo](https://github.com/mit-acl/bibliography) and commit/push any changes
+- Build and commit the static site into `_site` with bash and Docker: `./build_website.bash`
+- Check the deployment status [here](https://github.com/mit-acl/mit-acl.github.io/actions)
+- Check the website at: [https://mit-acl.github.io/](https://mit-acl.github.io/)
+
+## Alternative manual build (not recommended)
+If you don't want to install Docker, you can manually build, commit, and push:
 - Update the `_bibliography` submodule with: `git submodule update --remote`
 - Commit your changes to the source repo (i.e. `mit-acl.github.io`)
-- Build the static site into `_site` with either:
-    * Docker: `./build_website.bash`
-    * Local Install: `bundle exec jekyll build`
+- Build the static site into `_site` with your local Jekyll installation: `bundle exec jekyll build`
 - Commit your build to the `gh-pages` branch (i.e. inside `_site`)
 - Check the deployment status [here](https://github.com/mit-acl/mit-acl.github.io/actions)
 - Check the website at: [https://mit-acl.github.io/](https://mit-acl.github.io/)
