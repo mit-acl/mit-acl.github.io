@@ -21,7 +21,7 @@ git submodule update
 - Update the `_bibliography` submodule with: `git submodule update --remote`
 - Commit your changes to the source repo (i.e. `mit-acl.github.io`)
 - Build the static site into `_site` with either:
-    * Docker: `./docker/build.bash && ./docker/run.bash`
+    * Docker: `./build_website.bash`
     * Local Install: `bundle exec jekyll build`
 - Commit your build to the `gh-pages` branch (i.e. inside `_site`)
 - Check the deployment status [here](https://github.com/mit-acl/mit-acl.github.io/actions)
