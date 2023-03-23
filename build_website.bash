@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
+
 cd docker
+
+# update bibliography repo to head
+git submodule update --remote
 
 # copy in Gemfile to ensure correct dependenies are built into the image
 cp ../Gemfile .
@@ -12,7 +16,7 @@ cp ../Gemfile .
 GIT_TARGET="-C ../_site"
 files_changed=$(git $GIT_TARGET whatchanged -1 --format=oneline | tail -n +2 | grep -v sitemap.xml$ | wc -l)
 
-if [$files_changed -gt 0]; then
+if [ $files_changed -gt 0 ]; then
     git $GIT_TARGET add -A && git $GIT_TARGET commit -m "docker build: $(date)" && git $GIT_TARGET
 else
     echo "no website content has changed"
