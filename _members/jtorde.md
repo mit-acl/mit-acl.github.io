@@ -1,5 +1,5 @@
 ---
-active: true
+active: false
 kerberos: jtorde
 name: "Jesus Tordesillas Torres"
 portrait: /images/members/jtorde.jpg

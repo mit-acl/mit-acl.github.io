@@ -1,5 +1,5 @@
 ---
-active: true
+active: false
 kerberos: dkkim93
 name: Dong-Ki Kim
 portrait: /images/members/dkkim93.jpg
