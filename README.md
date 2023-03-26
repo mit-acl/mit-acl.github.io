@@ -19,7 +19,7 @@ git submodule update
 
 ## Easy build
 - Update [bibliography repo](https://github.com/mit-acl/bibliography) and commit/push any changes
-- Build and commit the static site into `_site` with bash and Docker: `./build_website.bash`
+- Build and commit the static site into `_site` with bash and Docker: `./build_and_deploy.bash`
 - Check the deployment status [here](https://github.com/mit-acl/mit-acl.github.io/actions)
 - Check the website at: [https://mit-acl.github.io/](https://mit-acl.github.io/)
 
