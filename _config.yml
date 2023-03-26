@@ -99,5 +99,5 @@ exclude:
     - Gemfile
     - Gemfile.lock
     - README.md
-    - build_website.bash
+    - build_and_deploy.bash
     - docker
