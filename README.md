@@ -34,11 +34,12 @@ If you don't want to install Docker, you can manually build, commit, and push:
 
 ## New Students
 If you're a new student, you need to be added to the website.
-Reach out to the current ACL webmaster via Slack and provide the following:
+Reach out to the [current ACL webmaster](https://wikis.mit.edu/confluence/pages/viewpage.action?pageId=123502773) via Slack and provide the following:
 1. A headshot (i.e. `.jpg` or `.png`)
-2. Markdown providing your information. [(See this example.)](https://raw.githubusercontent.com/mit-acl/mit-acl.github.io/master/_members/kavehf.md)
+2. Markdown providing your information. [(See this example.)](https://raw.githubusercontent.com/mit-acl/mit-acl.github.io/master/howto/template_member.md)
 Alternatively, if you're comfortable with GitHub/GitHub pages, you're welcome to make the changes yourself and submit a pull request.
 
 ## Notes
 * Citations are stored in [this repo](https://github.com/mit-acl/bibliography).
 * Static site builds are stored on [this branch](https://github.com/mit-acl/mit-acl.github.io/tree/gh-pages).
+* Derived from [the old private website repo](https://github.com/mit-acl/website). (Didn't fork because of the LFS files committed directly to the old repo.)
