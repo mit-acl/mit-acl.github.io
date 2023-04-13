@@ -100,4 +100,5 @@ exclude:
     - Gemfile.lock
     - README.md
     - build_and_deploy.bash
+    - open_firefox.bash
     - docker
