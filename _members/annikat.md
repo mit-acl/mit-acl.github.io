@@ -1,3 +1,4 @@
+---
 active: true
 kerberos: annikat
 name: Annika Thomas
@@ -27,3 +28,4 @@ education:
 interests:
 - Simultaneous Localization and Mapping
 - Trajectory Optimization
+---
