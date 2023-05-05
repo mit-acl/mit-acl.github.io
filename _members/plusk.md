@@ -10,6 +10,8 @@ title: PhD Candidate
 links:
 - type: GitHub
   url: http://www.github.com/plusk01
+- type: Website
+  url: https://plusk01.github.io/
 
 education:
 - type: Ph.D.
@@ -29,6 +31,7 @@ education:
 interests:
 - Robust Geometric Perception
 - Data Association
+- Localization and Mapping
 - Sensor-Aided IMU-based Navigation
 - Flight Control and Estimation
 ---
