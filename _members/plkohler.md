@@ -1,5 +1,5 @@
 ---
-active: true
+active: false
 kerberos: plkohler
 name: Paul Leonhard Kohler
 office: 31-236C
