@@ -6,12 +6,6 @@ portrait: /images/members/annikat.jpg
 position: PhD
 title: PhD Candidate
 
-links:
-- type: LinkedIn
-  url: http://www.linkedin.com/in/annika-thomas/
-- type: Twitter
-  url: https://twitter.com/Annika_Thomas_
-
 education:
 - type: Ph.D.
   study: Mechanical Engineering and Statistics
