@@ -3,8 +3,8 @@ active: true
 kerberos: kkondo
 name: Kota Kondo
 portrait: /images/members/kkondo.jpg
-position: Master 
-title: Master's Candidate
+position: PhD
+title: PhD Candidate
 
 links:
 - type: CV

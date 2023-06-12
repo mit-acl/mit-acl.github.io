@@ -4,8 +4,8 @@ kerberos: namanagg
 name: Naman Aggarwal
 office: 31-236D
 portrait: /images/members/namanagg.jpg
-position: Student
-title: Graduate Student
+position: PhD
+title: PhD Candidate
 
 links:
 - type: LinkedIn

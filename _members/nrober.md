@@ -3,8 +3,8 @@ active: true
 kerberos: nrober
 name: Nicholas Rober
 portrait: /images/members/nrober.jpg
-position: Master 
-title: Master's Candidate
+position: PhD
+title: PhD Candidate
 
 links:
 # TODO: Add website???
