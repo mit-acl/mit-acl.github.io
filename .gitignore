@@ -2,3 +2,4 @@ docs
 .sass-cache
 _site
 docker/Gemfile
+Gemfile.lock
