@@ -1,5 +1,5 @@
 ---
-active: true
+active: false
 kerberos: codrin
 name: Codrin Oneci
 office: 31-238B
