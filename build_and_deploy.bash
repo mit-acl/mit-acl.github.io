@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# update bibliography repo to head
+git submodule update --remote
+
+# ensure _site is up-to-date
+git -C _site pull
+
 # confirm current build is committed
 confirm_commit=$(git status -s | wc -l)
 if [ $confirm_commit -ne 0 ]; then
@@ -12,9 +18,6 @@ fi
 cd docker
 
 GIT_TARGET="-C ../_site"
-
-# update bibliography repo to head
-git submodule update --remote
 
 # update _site directory
 git $GIT_TARGET pull -f
