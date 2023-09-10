@@ -4,8 +4,8 @@ kerberos: yulun
 name: Yulun Tian
 office: 31-236B
 portrait: /images/members/yulun.jpg
-position: PhD
-title: PhD Candidate
+position: Postdoc
+title: Postdoctoral Scholar
 
 links:
 - type: Website

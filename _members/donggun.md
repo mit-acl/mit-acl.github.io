@@ -1,5 +1,5 @@
 ---
-active: true
+active: false
 kerberos: donggun
 name: Donggun Lee
 office: 31-248f

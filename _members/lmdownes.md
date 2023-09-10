@@ -1,5 +1,5 @@
 ---
-active: true
+active: false
 kerberos: lmdownes
 name: Lena Downes
 office: 31-235B

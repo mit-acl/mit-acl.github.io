@@ -1,5 +1,5 @@
 ---
-active: true
+active: false
 kerberos: lucyh
 name: Lucy Halperin
 office: 31-234C

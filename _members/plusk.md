@@ -1,5 +1,5 @@
 ---
-active: true
+active: false
 kerberos: plusk
 name: Parker Lusk
 office: 31-235D
