@@ -20,7 +20,7 @@ education:
   sudy: Aeronautics and Astronautics
   school: MIT
   start: 2023
-  current: True
+  current: true
 - type: M.S.
   study: Aeronautics and Astronautics
   school: MIT
