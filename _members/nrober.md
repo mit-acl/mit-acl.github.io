@@ -16,7 +16,7 @@ links:
 
 
 education:
-- type: PhD
+- type: Ph.D.
   sudy: Aeronautics and Astronautics
   school: MIT
   start: 2023
