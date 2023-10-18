@@ -1,5 +1,5 @@
 ---
-title:  Multi-Agent Trajectory Planning
+title:  Communication Delay Robust Multi-Agent Trajectory Planning in Dynamic Environments
 
 subtitle:
 
@@ -34,4 +34,4 @@ We show that RMADER outperforms existing approaches by achieving a 100\% success
 * **[https://github.com/mit-acl/rmader](https://github.com/mit-acl/rmader).**
 
 ### Videos
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=i1d8di2Nrbs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/i1d8di2Nrbs?si=fSPukXPPecZUvtdK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
