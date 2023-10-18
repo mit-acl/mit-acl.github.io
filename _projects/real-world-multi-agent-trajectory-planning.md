@@ -17,6 +17,7 @@ authors:
 
 papers:
 - kondo2022rmader
+- kondo2023rmader
 
 active: true
 ---
@@ -32,6 +33,9 @@ We show that RMADER outperforms existing approaches by achieving a 100\% success
 
 **Code is available at:**
 * **[https://github.com/mit-acl/rmader](https://github.com/mit-acl/rmader).**
+
+**Featured at MIT News**
+* **[New algorithm keeps drones from colliding in midair](https://news.mit.edu/2023/new-algorithm-keeps-drones-colliding-midair-0329).**
 
 ### Videos
 <iframe width="560" height="315" src="https://www.youtube.com/embed/i1d8di2Nrbs?si=fSPukXPPecZUvtdK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
