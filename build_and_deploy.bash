@@ -6,6 +6,7 @@ rm -rf _bibliography bibliography-master
 wget -qO- https://github.com/mit-acl/bibliography/archive/refs/heads/master.zip | busybox unzip - && mv bibliography-master/ _bibliography
 
 # ensure _site is up-to-date
+git -C _site reset --hard
 git -C _site pull
 
 # confirm current build is committed
