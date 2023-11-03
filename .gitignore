@@ -3,4 +3,6 @@ docs
 _site
 docker/Gemfile
 Gemfile.lock
+_bibliography
+bibliography-master
 **/.DS_Store
