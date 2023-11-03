@@ -3,3 +3,4 @@ docs
 _site
 docker/Gemfile
 Gemfile.lock
+_bibliography
