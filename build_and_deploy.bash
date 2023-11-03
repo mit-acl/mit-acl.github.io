@@ -2,7 +2,7 @@
 
 # pull down current master branch of bibliography repo
 # https://github.com/mit-acl/bibliography
-rm -f _bibliography
+rm -rf _bibliography bibliography-master
 wget -qO- https://github.com/mit-acl/bibliography/archive/refs/heads/master.zip | busybox unzip - && mv bibliography-master/ _bibliography
 
 # ensure _site is up-to-date

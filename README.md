@@ -6,19 +6,14 @@ Jekyll website for Aerospace Controls Laboratory at MIT.
 We build the static site locally and then push it to the `gh-pages` branch for hosting. This requires you clone the repository and `_site` folder correctly.
 
 ```bash
-git clone --recurse-submodules git@github.com:mit-acl/mit-acl.github.io.git
+git clone git@github.com:mit-acl/mit-acl.github.io.git
 cd mit-acl.github.io.git
 git clone -b gh-pages `git config remote.origin.url` _site
 ```
 
-If you clone the repo without the `--recurse-submodules` flag, you can initialize the submodules after the fact with:
-```bash
-git submodule init 
-git submodule update
-```
-
 ## Easy build
 - Update [bibliography repo](https://github.com/mit-acl/bibliography) and commit/push any changes
+  - Do not edit the contents of the `_bibliography` directory in this repo. The directory is pulled down fresh from the [bibliography repo](https://github.com/mit-acl/bibliography) on each build. Thus, edits should be made and committed directly to that repo separately.
 - Build and commit the static site into `_site` with bash and Docker: `./build_and_deploy.bash`
 - Check the deployment status [here](https://github.com/mit-acl/mit-acl.github.io/actions)
 - Check the website at: [https://mit-acl.github.io/](https://mit-acl.github.io/)
