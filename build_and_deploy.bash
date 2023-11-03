@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-# update bibliography repo to head
-git submodule update --remote
+# pull down current master branch of bibliography repo
+# https://github.com/mit-acl/bibliography
+wget -qO- https://github.com/mit-acl/bibliography/archive/refs/heads/master.zip | busybox unzip - && mv bibliography-master/ _bibliography
 
 # ensure _site is up-to-date
 git -C _site pull
