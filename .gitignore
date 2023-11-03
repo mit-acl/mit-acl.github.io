@@ -4,3 +4,4 @@ _site
 docker/Gemfile
 Gemfile.lock
 _bibliography
+bibliography-master
