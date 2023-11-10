@@ -5,26 +5,22 @@ date: 2023-10-15
 description: This project developed an approach to verify safety for systems subject to unknown disturbances 
 summary:
 
-featured_image: '/images/projects/heron_reachability.png'
+featured_image: '/images/projects/heron_reachability_icon.png'
 
 authors:
 - nrober
 
 
-
-active: 
+active: true
 ---
 
 ### About
 
-Neural networks (NNs) are useful for many controls problems. However, while they may behave well for a nominal input, NNs are not generally robust to perturbations to that input, which may exist due to noise or adversarial attacks. For this reason, as NNs are applied to safety-critical systems such as mobile robotics, it is necessary to develop algorithms that can provide safety assurances about these systems. This project developed a backward reachability analysis approach that can determine what states a system would have to come from to end up in a given target set. Our approach can be used to guarantee safety for the system by setting the target set as an obstacle and ensuring that the system is not in the backprojection set, i.e., the set of states that will collide with the obstacle.
+As autonomy pipelines become more complex, possibly including learned components, it becomes necessary to verify that they are safe to be deployed in safety-critical environments. This poses a challenge for real systems, which are typically subject to modeling errors and unknown disturbances that make it more challenging to predict how the system will behave. Since the disturbances are not known ahead of time, we need to generate safety assurances at runtime. We accomplish this by using a computational graph analysis tool configured with a known system model to predict the possible future states of the system, i.e., the reachable set. Data is collected online and fed into a moving horizon estimator to generate an estimate of the disturbances affecting the system, which is included in the reachability analysis to accurately predict the behavior of the true system.
 
-![](/images/projects/backward_reach_nfls.png)
+![](/images/projects/heron_reachability.png)
 
 ### Software
 
-https://github.com/neu-autonomy/nfl_veripy
+Software is in review.
 
-### Sponsor
-
-This research is funded by Ford Motor Company.
