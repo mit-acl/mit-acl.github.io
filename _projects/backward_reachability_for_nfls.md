@@ -27,7 +27,7 @@ Neural networks (NNs) are useful for many controls problems. However, while they
 
 ### Software
 
-The software is under release review.
+https://github.com/neu-autonomy/nfl_veripy
 
 ### Sponsor
 
