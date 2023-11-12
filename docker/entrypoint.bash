@@ -2,5 +2,12 @@
 
 source ~/.bashrc
 cd ~/bridge
-#bundle update
+
+# shouldn't need to redo this, but for some reason I do...
+bundle update
+bundle install
+
+# builds image
 bundle exec jekyll build
+
+#bash
