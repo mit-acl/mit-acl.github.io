@@ -19,11 +19,11 @@ education:
 - type: B.S.
   study: Computer Science and Engineering
   school: MIT
-  graduation: 2022 (optional)
+  graduation: 2022
 - type: M.Eng.
   study: Electrical Engineering and Computer Science
   school: MIT
-  graduation: 2023 (optional)
+  graduation: 2023
 
 
 interests:
