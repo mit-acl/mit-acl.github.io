@@ -4,7 +4,7 @@ kerberos: jonik
 name: Joana Nikolova
 office: 31-248D
 portrait: /images/members/jonik.jpg
-# position: Master
+position: Master
 title: Master's Candidate
 
 links: # You can use any link you want. The URL is displayed with the text in the *type* field. 
