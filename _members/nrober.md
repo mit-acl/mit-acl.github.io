@@ -7,16 +7,23 @@ position: PhD
 title: PhD Candidate
 
 links:
-# TODO: Add website???
+- type: Website
+  url: https://nrober1122.github.io/
 - type: Google Scholar
   url: https://scholar.google.com/citations?user=TLla40cAAAAJ&hl=en&oi=ao
+- type: LinkedIn
+  url: http://www.linkedin.com/in/nicholas-rober/
 
 
 education:
+- type: Ph.D.
+  sudy: Aeronautics and Astronautics
+  school: MIT
+  start: 2023
+  current: true
 - type: M.S.
   study: Aeronautics and Astronautics
   school: MIT
-  current: true
   start: 2021
 - type: B.S.E.
   study: Mechanical Engingeering
