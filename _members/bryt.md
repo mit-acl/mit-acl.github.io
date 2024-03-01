@@ -2,7 +2,7 @@
 active: true
 kerberos: bryt
 name: Britton 'Bryt' Bradley
-office: 33-336
+office: 33-207
 phone: 617-253-6583
 portrait: /images/members/bryt.jpg
 position: Admin
@@ -21,4 +21,4 @@ awards:
   date: 2022
 ---
 
-Administrative Assistant to professors Harris, How, and Wardle (& ~5% with Professor Roy for summer 2022)
+Administrative Assistant to professors Harris, How, and Cahoy (in her role as Associate Department Head)
