@@ -17,8 +17,8 @@ RUN rm -rf /var/lib/apt/lists/*
 
 COPY Gemfile /Gemfile
 SHELL ["/bin/bash", "-c"]
-RUN source ~/.bashrc && bundle update
-RUN source ~/.bashrc && bundle install
+#RUN source ~/.bashrc && bundle update
+#RUN source ~/.bashrc && bundle install
 
 COPY ./entrypoint.bash /entrypoint.bash
 ENTRYPOINT ["/entrypoint.bash"]
