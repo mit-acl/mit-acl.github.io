@@ -8,7 +8,7 @@ title: PhD Candidate
 
 links:
 - type: CV
-  url: http://kotakondo.com/wp-content/uploads/2021/05/KotaKondoCV.pdf
+  url: http://kotakondo.com/wp-content/uploads/2024/08/Kota_Kondo_CV-1.pdf
 - type: Google Scholar
   url: https://scholar.google.com/citations?user=dzBHBGwAAAAJ&hl=en&oi=ao
 - type: Website
@@ -36,6 +36,6 @@ education:
 interests:
 - Autonomous systems
 - Optimization
-- Multi-agent control and path-planning
+- Multiagent trajectory planning
 
 --- 
