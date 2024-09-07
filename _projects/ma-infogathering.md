@@ -9,7 +9,7 @@ authors:
 - mrrobot
 featured_image: '/images/projects/infogathering_hwexp.png'
 papers:
-- cai2022energy
+- cai2023energy
 - cai2021non
 active: true
 ---
