@@ -1,8 +1,8 @@
 ---
 title: Physics-Informed Evidential Traversability Learning
 subtitle:
-date: 2024-09-06
-description: Embedding physics knowledge into learned models for traversing out-of-distribution terrain
+date: 2024-09-09
+description: Incorporating physics knowledge into learned models for traversing out-of-distribution terrain
 summary:
 authors:
 - xyc

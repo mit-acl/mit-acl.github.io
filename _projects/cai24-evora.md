@@ -1,7 +1,7 @@
 ---
 title: Evidential Traversability Learning
 subtitle:
-date: 2024-09-06
+date: 2024-09-09
 description: Uncertainty-aware traversability learning and risk-aware navigation in off-road terrain
 summary:
 authors:
@@ -17,7 +17,7 @@ active: true
 
 ### Videos
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/pV7GxAFYuto?si=k_uBsWPdHqJYV65B" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pV7GxAFYuto?si=jMrRwgMQsQL35HgV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Links
 
