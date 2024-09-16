@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# show commands
+set -x
+
+# Repo Links:
 # https://github.com/mit-acl/mit-acl.github.io
 # https://github.com/mit-acl/bibliography
 
@@ -33,6 +37,7 @@ cp ../Gemfile .
 
 # build and run the image
 ./build.bash && ./run.bash && \
+    cd .. && \
     git -C _site add -A && \
     git -C _site commit -m "docker build: $(date)" && \
     git -C _site push
