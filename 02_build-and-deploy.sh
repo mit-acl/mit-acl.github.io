@@ -33,7 +33,7 @@ git -C _bibliography pull -f
 cd _docker
 
 # build and run the image
-./build.sh && ./run.sh && \
+./build.sh && ./run.sh build && \
     cd .. && \
     git -C _site add -A && \
     git -C _site commit -m "docker build: $(date)" && \
