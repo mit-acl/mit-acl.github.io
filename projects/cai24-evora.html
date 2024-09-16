@@ -30,20 +30,20 @@
 	<meta name="theme-color" content="#ffffff">
 
 	<!-- Page Info -->
-	<title>Risk-Aware Off-Road Navigation Leveraging Semantics - Aerospace Controls Laboratory</title>
+	<title>Evidential Traversability Learning - Aerospace Controls Laboratory</title>
 
-	<meta name="description" content="Use semantics of the environment to infer terrain traversability based on history of speed data.">
+	<meta name="description" content="Uncertainty-aware traversability learning and risk-aware navigation in off-road terrain">
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Risk-Aware Off-Road Navigation Leveraging Semantics - Aerospace Controls Laboratory">
-	<meta name="twitter:description" content="Use semantics of the environment to infer terrain traversability based on history of speed data.">
-	<meta name="twitter:image:src" content="/images/projects/sara_husky_in_woods.jpg">
+	<meta name="twitter:title" content="Evidential Traversability Learning - Aerospace Controls Laboratory">
+	<meta name="twitter:description" content="Uncertainty-aware traversability learning and risk-aware navigation in off-road terrain">
+	<meta name="twitter:image:src" content="/images/projects/2024_evora.png">
 
 	<!-- Facebook OpenGraph -->
-	<meta property="og:title" content="Risk-Aware Off-Road Navigation Leveraging Semantics - Aerospace Controls Laboratory" />
-	<meta property="og:description" content="Use semantics of the environment to infer terrain traversability based on history of speed data." />
-	<meta property="og:image" content="/images/projects/sara_husky_in_woods.jpg" />
+	<meta property="og:title" content="Evidential Traversability Learning - Aerospace Controls Laboratory" />
+	<meta property="og:description" content="Uncertainty-aware traversability learning and risk-aware navigation in off-road terrain" />
+	<meta property="og:image" content="/images/projects/2024_evora.png" />
 
 	
 	<!-- Font Embed Code -->
@@ -77,7 +77,7 @@ gtag('config', 'UA-47348607-4'); </script>
 </head>
 
 
-<body class="loading ajax-loading" data-site-url="" data-page-url="/projects/learned-traversability">
+<body class="loading ajax-loading" data-site-url="" data-page-url="/projects/cai24-evora">
 
 
 	<header class="header">
@@ -244,18 +244,23 @@ gtag('config', 'UA-47348607-4'); </script>
 	
 	<div class="page">
 
-		<div class="page__content" data-page-title="Risk-Aware Off-Road Navigation Leveraging Semantics - Aerospace Controls Laboratory">
+		<div class="page__content" data-page-title="Evidential Traversability Learning - Aerospace Controls Laboratory">
 
 			<section class="intro">
 
 	<div class="wrap">
 
-		<h1>Risk-Aware Off-Road Navigation Leveraging Semantics</h1>
+		<h1>Evidential Traversability Learning</h1>
 		<p>
 			
 				
 				
 					<a href="/people/xyc">Xiaoyi (Jeremy) Cai</a>,
+				
+			
+				
+				
+					<a href="/people/lakshays">Lakshay Sharma</a>,
 				
 			
 				
@@ -273,21 +278,22 @@ gtag('config', 'UA-47348607-4'); </script>
 
 	<div class="wrap">
 
-		<h3 id="about">About</h3>
+		<h3 id="videos">Videos</h3>
 
-<p>Motion planning in off-road environments requires reasoning about both the geometry and semantics of the scene (e.g., a robot may be able to drive through soft bushes but not a fallen log). In many recent works, the world is classified into a finite number of semantic categories that often are not sufficient to capture the ability (i.e., the speed) with which a robot can traverse off-road terrain. Instead, this work proposes a new representation of traversability based exclusively on robot speed that can be learned from data, offers interpretability and intuitive tuning, and can be easily integrated with a variety of planning paradigms in the form of a costmap. Specifically, given a dataset of experienced trajectories, the proposed algorithm learns to predict a distribution of speeds the robot could achieve, conditioned on the environment semantics and commanded speed. The learned speed distribution map is converted into costmaps with a risk-aware cost term based on conditional value at risk (CVaR). Numerical simulations demonstrate that the proposed risk-aware planning algorithm leads to faster average time-to-goals compared to a method that only considers expected behavior, and the planner can be tuned for slightly slower, but less variable behavior. Furthermore, the approach is integrated into a full autonomy stack and demonstrated in a high-fidelity Unity environment and is shown to provide a 30\% improvement in the success rate of navigation.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pV7GxAFYuto?si=jMrRwgMQsQL35HgV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
 
-<p>Pipeline for generating risk-aware speed map from semantic input and commanded speeds.
-<img src="/images/projects/sara_iros22_architecture.png" alt="" /></p>
+<h3 id="links">Links</h3>
 
-<p>Image illustrating the training environment and test environment in Unity simulator.
-<img src="/images/projects/sara_iros22_unity_and_test_goals.png" alt="" /></p>
+<ul>
+  <li><a href="https://xiaoyi-cai.github.io/evora/">Project Website</a></li>
+  <li><a href="https://ieeexplore.ieee.org/abstract/document/10606099">Paper Link</a></li>
+  <li><a href="https://aeroastro.mit.edu/news-impact/evora-deep-evidential-traversability-learning-for-risk-aware-off-road-autonomy/">AeroAstro News</a></li>
+</ul>
 
-<h3 id="sponsor">Sponsor</h3>
+<h3 id="about">About</h3>
 
-<p>This research is funded by ARL SARA.</p>
+<p>Traversing terrain with good traction is crucial for achieving fast off-road navigation. Instead of manually designing costs based on terrain features, existing methods learn terrain properties directly from data via self-supervision to automatically penalize trajectories moving through undesirable terrain, but challenges remain in properly quantifying and mitigating the risk due to uncertainty in the learned models. To this end, we present evidential off-road autonomy (EVORA), a unified framework to learn uncertainty-aware traction model and plan risk-aware trajectories. For uncertainty quantification, we efficiently model both aleatoric and epistemic uncertainty by learning discrete traction distributions and probability densities of the traction predictor’s latent features. Leveraging evidential deep learning, we parameterize Dirichlet distributions with the network outputs and propose a novel uncertainty-aware squared Earth Mover’s Distance loss with a closed-form expression that improves learning accuracy and navigation performance. For risk-aware navigation, the proposed planner simulates state trajectories with the worst-case expected traction to handle aleatoric uncertainty and penalizes trajectories moving through terrain with high epistemic uncertainty. Our approach is extensively validated in simulation and on wheeled and quadruped robots, showing improved navigation performance compared to methods that assume no slip, assume the expected traction, or optimize for the worst-case expected cost.</p>
 
-<hr />
 
 
 		
@@ -296,7 +302,13 @@ gtag('config', 'UA-47348607-4'); </script>
 				
 					<li>
 						
-<span id="cai2022risk">Cai, X., Everett, M., Fink, J., and How, J. P., “<b>Risk-Aware Off-Road Navigation via a Learned Speed Distribution Map</b>,” <i>2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</i>, IEEE, 2022, pp. 2931–2937.</span>
+<span id="cai2024evora">Cai, X., Ancha, S., Sharma, L., Osteen, P. R., Bucher, B., Phillips, S., Wang, J., Everett, M., Roy, N., and How, J. P., “<b>EVORA: Deep Evidential Traversability Learning for Risk-Aware Off-Road Autonomy</b>,” <i>IEEE Transactions on Robotics</i>, vol. 40, 2024, pp. 3756–3777.</span>
+
+					</li>
+				
+					<li>
+						
+<span id="cai2023probabilistic">Cai, X., Everett, M., Sharma, L., Osteen, P. R., and How, J. P., “<b>Probabilistic Traversability Model for Risk-Aware Motion Planning in Off-Road Environments</b>,” <i>2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</i>, 2023.</span>
 
 					</li>
 				
