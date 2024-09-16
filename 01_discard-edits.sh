@@ -19,5 +19,5 @@ sudo chown -R $USER:$USER _bibliography
 git -C _site reset --hard
 git -C _bibliography reset --hard
 
-git -C _site clean -f
-git -C _bibliography clean -f
+git -C _site clean -f -d
+git -C _bibliography clean -f -d
