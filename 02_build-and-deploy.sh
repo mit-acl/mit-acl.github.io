@@ -1,11 +1,7 @@
 #!/usr/bin/env bash
 
 # show commands
-<<<<<<<< HEAD:02_build-and-deploy.sh
 #set -x
-========
-set -x
->>>>>>>> 27dae9c (updated build scripts):01_build-and-deploy.bash
 
 # Repo Links:
 # https://github.com/mit-acl/mit-acl.github.io
@@ -37,11 +33,7 @@ git -C _bibliography pull -f
 cd _docker
 
 # build and run the image
-<<<<<<<< HEAD:02_build-and-deploy.sh
 ./build.sh && ./run.sh build && \
-========
-./build.bash && ./run.bash && \
->>>>>>>> 27dae9c (updated build scripts):01_build-and-deploy.bash
     cd .. && \
     git -C _site add -A && \
     git -C _site commit -m "docker build: $(date)" && \
