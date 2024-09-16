@@ -8,7 +8,7 @@ authors:
 - xyc
 - lakshays
 - mfe
-featured_image: '/images/projects/2024_evora.jpg'
+featured_image: '/images/projects/2024_evora.png'
 papers:
 - cai2024evora
 - cai2023probabilistic
