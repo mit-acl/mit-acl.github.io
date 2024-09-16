@@ -1,5 +1,5 @@
 ---
-active: true
+active: false
 kerberos: sjamieso
 name: Stewart Jamieson
 office: 31-234A

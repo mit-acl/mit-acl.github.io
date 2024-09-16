@@ -1,5 +1,5 @@
 ---
-active: true
+active: false
 kerberos: atagliab
 name: Andrea Tagliabue
 portrait: /images/members/atagliab.jpg

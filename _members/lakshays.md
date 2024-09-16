@@ -1,5 +1,5 @@
 ---
-active: true
+active: false
 kerberos: lakshays
 name: Lakshay Sharma
 office: 31-234D
