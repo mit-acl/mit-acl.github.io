@@ -12,6 +12,10 @@ case $yn in
 	* ) echo invalid response;;
 esac
 
+# make sure contents are not owned by root
+sudo chown -R $USER:$USER _site
+sudo chown -R $USER:$USER _bibliography
+
 git -C _site reset --hard
 git -C _bibliography reset --hard
 
