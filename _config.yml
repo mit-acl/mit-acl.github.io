@@ -99,7 +99,6 @@ exclude:
     - Gemfile
     - Gemfile.lock
     - README.md
-    - 00_discard-edits.bash
     - 00_serve.sh
     - 01_discard-edits.sh
     - 02_build-and-deploy.sh
