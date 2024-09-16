@@ -6,7 +6,7 @@ description: Incorporating physics knowledge into learned models for traversing 
 summary:
 authors:
 - xyc
-featured_image: '/images/projects/2024_pietra.jpg'
+featured_image: '/images/projects/2024_pietra.png'
 papers:
 - cai2024pietra
 active: true
