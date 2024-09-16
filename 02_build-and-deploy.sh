@@ -30,10 +30,7 @@ check_repo_fresh _bibliography
 git -C _site pull -f
 git -C _bibliography pull -f
 
-cd docker
-
-# copy in Gemfile to ensure correct dependenies are built into the image
-cp ../Gemfile .
+cd _docker
 
 # build and run the image
 ./build.bash && ./run.bash && \
