@@ -100,6 +100,8 @@ exclude:
     - Gemfile.lock
     - README.md
     - 00_discard-edits.bash
-    - 01_build-and-deploy.bash
-    - 02_open-firefox.bash
-    - docker
+    - 00_serve.sh
+    - 01_discard-edits.sh
+    - 02_build-and-deploy.sh
+    - 03_open-firefox.sh
+    - Makefile
