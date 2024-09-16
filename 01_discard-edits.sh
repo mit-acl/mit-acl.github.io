@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -x
+#set -x
 
 read -p "Reset _site and _bibliography to last commit? (yes/no) " yn
 

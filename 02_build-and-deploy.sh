@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # show commands
-set -x
+#set -x
 
 # Repo Links:
 # https://github.com/mit-acl/mit-acl.github.io
