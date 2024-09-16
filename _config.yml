@@ -99,6 +99,7 @@ exclude:
     - Gemfile
     - Gemfile.lock
     - README.md
-    - build_and_deploy.bash
-    - open_firefox.bash
+    - 00_discard-edits.bash
+    - 01_build-and-deploy.bash
+    - 02_open-firefox.bash
     - docker
