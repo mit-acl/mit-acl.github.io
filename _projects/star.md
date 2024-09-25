@@ -13,6 +13,8 @@ papers:
 active: true
 ---
 <img src="/images/projects/star_hallway.png" width="850"/>
+<img src="/images/projects/star_robot.jpg" width="500"/>
+
 
 ### About
 
