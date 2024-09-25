@@ -2,7 +2,7 @@
 title: Risk-Aware Mapping and Planning
 subtitle:
 date: 2023-05-29
-description: RAMP: A Risk-Aware Mapping and Planning Pipeline for Fast Off-Road Ground Robot Navigation
+description: "RAMP: A Risk-Aware Mapping and Planning Pipeline for Fast Off-Road Ground Robot Navigation"
 summary:
 authors:
 - lakshays
