@@ -30,20 +30,20 @@
 	<meta name="theme-color" content="#ffffff">
 
 	<!-- Page Info -->
-	<title>Physics-Informed Evidential Traversability Learning - Aerospace Controls Laboratory</title>
+	<title>Risk-Aware Mapping and Planning - Aerospace Controls Laboratory</title>
 
-	<meta name="description" content="Incorporating physics knowledge into learned models for traversing out-of-distribution terrain">
+	<meta name="description" content="RAMP: A Risk-Aware Mapping and Planning Pipeline for Fast Off-Road Ground Robot Navigation">
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Physics-Informed Evidential Traversability Learning - Aerospace Controls Laboratory">
-	<meta name="twitter:description" content="Incorporating physics knowledge into learned models for traversing out-of-distribution terrain">
-	<meta name="twitter:image:src" content="/images/projects/2024_pietra.png">
+	<meta name="twitter:title" content="Risk-Aware Mapping and Planning - Aerospace Controls Laboratory">
+	<meta name="twitter:description" content="RAMP: A Risk-Aware Mapping and Planning Pipeline for Fast Off-Road Ground Robot Navigation">
+	<meta name="twitter:image:src" content="/images/projects/ramp.png">
 
 	<!-- Facebook OpenGraph -->
-	<meta property="og:title" content="Physics-Informed Evidential Traversability Learning - Aerospace Controls Laboratory" />
-	<meta property="og:description" content="Incorporating physics knowledge into learned models for traversing out-of-distribution terrain" />
-	<meta property="og:image" content="/images/projects/2024_pietra.png" />
+	<meta property="og:title" content="Risk-Aware Mapping and Planning - Aerospace Controls Laboratory" />
+	<meta property="og:description" content="RAMP: A Risk-Aware Mapping and Planning Pipeline for Fast Off-Road Ground Robot Navigation" />
+	<meta property="og:image" content="/images/projects/ramp.png" />
 
 	
 	<!-- Font Embed Code -->
@@ -77,7 +77,7 @@ gtag('config', 'UA-47348607-4'); </script>
 </head>
 
 
-<body class="loading ajax-loading" data-site-url="" data-page-url="/projects/cai24-pietra">
+<body class="loading ajax-loading" data-site-url="" data-page-url="/projects/sharma23-ramp">
 
 
 	<header class="header">
@@ -244,23 +244,33 @@ gtag('config', 'UA-47348607-4'); </script>
 	
 	<div class="page">
 
-		<div class="page__content" data-page-title="Physics-Informed Evidential Traversability Learning - Aerospace Controls Laboratory">
+		<div class="page__content" data-page-title="Risk-Aware Mapping and Planning - Aerospace Controls Laboratory">
 
 			<section class="intro">
 
 	<div class="wrap">
 
-		<h1>Physics-Informed Evidential Traversability Learning</h1>
+		<h1>Risk-Aware Mapping and Planning</h1>
 		<p>
 			
 				
 				
-					<a href="/people/xyc">Xiaoyi (Jeremy) Cai</a>,
+					<a href="/people/lakshays">Lakshay Sharma</a>,
 				
 			
 				
 				
-					<a href="/people/queeney">Jimmy Queeney</a>
+					<a href="/people/mfe">Michael Everett</a>,
+				
+			
+				
+				
+					<a href="/people/donggun">Donggun Lee</a>,
+				
+			
+				
+				
+					<a href="/people/xyc">Xiaoyi (Jeremy) Cai</a>
 				
 			
 		</p>
@@ -273,19 +283,21 @@ gtag('config', 'UA-47348607-4'); </script>
 
 	<div class="wrap">
 
-		<h3 id="videos">Videos</h3>
+		<p><img src="/images/projects/ramp.png" width="850" /></p>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OTnNZ96oJRk?si=XVb6hxRNVdu8FzeU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+<h3 id="videos">Videos</h3>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vh5XxoWMjo8?si=ZZVpFW1NuUdc04nY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
 
 <h3 id="links">Links</h3>
 
 <ul>
-  <li><a href="https://www.arxiv.org/abs/2409.03005">Paper Link</a></li>
+  <li><a href="https://ieeexplore.ieee.org/abstract/document/10160602">Paper Link</a></li>
 </ul>
 
 <h3 id="about">About</h3>
 
-<p>Self-supervised learning is a powerful approach for developing traversability models for off-road navigation, but these models often struggle with inputs unseen during training. Existing methods utilize techniques like evidential deep learning to quantify model uncertainty, helping to identify and avoid out-of-distribution terrain. However, always avoiding out-of-distribution terrain can be overly conservative, e.g., when novel terrain can be effectively analyzed using a physics-based model. To overcome this challenge, we introduce Physics-Informed Evidential Traversability (PIETRA), a self-supervised learning framework that integrates physics priors directly into the mathematical formulation of evidential neural networks and introduces physics knowledge implicitly through an uncertainty-aware, physics-informed training loss. Our evidential network seamlessly transitions between learned and physics-based predictions for out-of-distribution inputs. Additionally, the physics-informed loss regularizes the learned model, ensuring better alignment with the physics model. Extensive simulations and hardware experiments demonstrate that PIETRA improves both learning accuracy and navigation performance in environments with significant distribution shifts.</p>
+<p>A key challenge in fast ground robot navigation in 3D terrain is balancing robot speed and safety. Recent work has shown that 2.5D maps (2D representations with additional 3D information) are ideal for real-time safe and fast planning. However, the prevalent approach of generating 2D occupancy grids through raytracing makes the generated map unsafe to plan in, due to inaccurate representation of unknown space. Additionally, existing planners such as MPPI do not consider speeds in known free and unknown space separately, leading to slower overall plans. The RAMP pipeline proposed here solves these issues using new mapping and planning methods. This work first presents ground point inflation with persistent spatial memory as a way to generate accurate occupancy grid maps from classified pointclouds. Then we present an MPPI-based planner with embedded variability in horizon, to maximize speed in known free space while retaining cautionary penetration into unknown space. Finally, we integrate this mapping and planning pipeline with risk constraints arising from 3D terrain, and verify that it enables fast and safe navigation using simulations and hardware demonstrations.</p>
 
 
 		
@@ -294,7 +306,7 @@ gtag('config', 'UA-47348607-4'); </script>
 				
 					<li>
 						
-<span id="cai2024pietra">Cai, X., Queeney, J., Xu, T., Datar, A., Pan, C., Miller, M., Flather, A., Osteen, P. R., Roy, N., Xiao, X., and How, J. P., “<b>PIETRA: Physics-Informed Evidential Learning for Traversing Out-of-Distribution Terrain</b>,” <i>arXiv:2409.03005</i>, 2024.</span>
+<span id="sharma2023ramp">Sharma, L., Everett, M., Lee, D., Cai, X., Osteen, P., and How, J. P., “<b>RAMP: A Risk-Aware Mapping and Planning Pipeline for Fast Off-Road Ground Robot Navigation</b>,” <i>2023 IEEE International Conference on Robotics and Automation (ICRA)</i>, IEEE, 2023, pp. 5730–5736.</span>
 
 					</li>
 				

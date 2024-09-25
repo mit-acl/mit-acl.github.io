@@ -30,20 +30,20 @@
 	<meta name="theme-color" content="#ffffff">
 
 	<!-- Page Info -->
-	<title>Physics-Informed Evidential Traversability Learning - Aerospace Controls Laboratory</title>
+	<title>Scalable, Adaptive, and Resilient Autonomy (SARA) - Aerospace Controls Laboratory</title>
 
-	<meta name="description" content="Incorporating physics knowledge into learned models for traversing out-of-distribution terrain">
+	<meta name="description" content="Develop methods for autonomous complex terrain maneuver.">
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Physics-Informed Evidential Traversability Learning - Aerospace Controls Laboratory">
-	<meta name="twitter:description" content="Incorporating physics knowledge into learned models for traversing out-of-distribution terrain">
-	<meta name="twitter:image:src" content="/images/projects/2024_pietra.png">
+	<meta name="twitter:title" content="Scalable, Adaptive, and Resilient Autonomy (SARA) - Aerospace Controls Laboratory">
+	<meta name="twitter:description" content="Develop methods for autonomous complex terrain maneuver.">
+	<meta name="twitter:image:src" content="/images/projects/sara_robots.png">
 
 	<!-- Facebook OpenGraph -->
-	<meta property="og:title" content="Physics-Informed Evidential Traversability Learning - Aerospace Controls Laboratory" />
-	<meta property="og:description" content="Incorporating physics knowledge into learned models for traversing out-of-distribution terrain" />
-	<meta property="og:image" content="/images/projects/2024_pietra.png" />
+	<meta property="og:title" content="Scalable, Adaptive, and Resilient Autonomy (SARA) - Aerospace Controls Laboratory" />
+	<meta property="og:description" content="Develop methods for autonomous complex terrain maneuver." />
+	<meta property="og:image" content="/images/projects/sara_robots.png" />
 
 	
 	<!-- Font Embed Code -->
@@ -77,7 +77,7 @@ gtag('config', 'UA-47348607-4'); </script>
 </head>
 
 
-<body class="loading ajax-loading" data-site-url="" data-page-url="/projects/cai24-pietra">
+<body class="loading ajax-loading" data-site-url="" data-page-url="/projects/sara">
 
 
 	<header class="header">
@@ -244,18 +244,28 @@ gtag('config', 'UA-47348607-4'); </script>
 	
 	<div class="page">
 
-		<div class="page__content" data-page-title="Physics-Informed Evidential Traversability Learning - Aerospace Controls Laboratory">
+		<div class="page__content" data-page-title="Scalable, Adaptive, and Resilient Autonomy (SARA) - Aerospace Controls Laboratory">
 
 			<section class="intro">
 
 	<div class="wrap">
 
-		<h1>Physics-Informed Evidential Traversability Learning</h1>
+		<h1>Scalable, Adaptive, and Resilient Autonomy (SARA)</h1>
 		<p>
 			
 				
 				
 					<a href="/people/xyc">Xiaoyi (Jeremy) Cai</a>,
+				
+			
+				
+				
+					<a href="/people/lakshays">Lakshay Sharma</a>,
+				
+			
+				
+				
+					<a href="/people/mfe">Michael Everett</a>,
 				
 			
 				
@@ -273,19 +283,17 @@ gtag('config', 'UA-47348607-4'); </script>
 
 	<div class="wrap">
 
-		<h3 id="videos">Videos</h3>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OTnNZ96oJRk?si=XVb6hxRNVdu8FzeU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
-
-<h3 id="links">Links</h3>
-
-<ul>
-  <li><a href="https://www.arxiv.org/abs/2409.03005">Paper Link</a></li>
-</ul>
+		<p><img src="/images/projects/sara_robots.png" width="850" /></p>
 
 <h3 id="about">About</h3>
 
-<p>Self-supervised learning is a powerful approach for developing traversability models for off-road navigation, but these models often struggle with inputs unseen during training. Existing methods utilize techniques like evidential deep learning to quantify model uncertainty, helping to identify and avoid out-of-distribution terrain. However, always avoiding out-of-distribution terrain can be overly conservative, e.g., when novel terrain can be effectively analyzed using a physics-based model. To overcome this challenge, we introduce Physics-Informed Evidential Traversability (PIETRA), a self-supervised learning framework that integrates physics priors directly into the mathematical formulation of evidential neural networks and introduces physics knowledge implicitly through an uncertainty-aware, physics-informed training loss. Our evidential network seamlessly transitions between learned and physics-based predictions for out-of-distribution inputs. Additionally, the physics-informed loss regularizes the learned model, ensuring better alignment with the physics model. Extensive simulations and hardware experiments demonstrate that PIETRA improves both learning accuracy and navigation performance in environments with significant distribution shifts.</p>
+<p>ACL is part of the MIT team that participates in the <a href="https://arl.devcom.army.mil/cras/sara-cra/">ARL SARA program (cycle 2)</a>. The goal of the project is to achieve autonomous navigation in complex off-road environments. To this end, the ACL team has proposed several approaches for uncertainty-aware traversability learning and risk-aware planning:</p>
+<ul>
+  <li><a href="https://acl.mit.edu/projects/cai24-pietra">Physics-Informed Evidential Traversability Learning</a></li>
+  <li><a href="https://acl.mit.edu/projects/cai24-evora">EVORA: Deep EVidential Traversability Learning for Risk-Aware Off-Road Autonomy</a></li>
+  <li><a href="https://acl.mit.edu/projects/sharma23-ramp">RAMP: A Risk-Aware Mapping and Planning Pipeline for Fast Off-Road Ground Robot Navigation</a></li>
+  <li><a href="https://acl.mit.edu/projects/cai22-learned-traversability">Risk-Aware Off-Road Navigation via a Learned Speed Distribution Map</a></li>
+</ul>
 
 
 		
@@ -295,6 +303,30 @@ gtag('config', 'UA-47348607-4'); </script>
 					<li>
 						
 <span id="cai2024pietra">Cai, X., Queeney, J., Xu, T., Datar, A., Pan, C., Miller, M., Flather, A., Osteen, P. R., Roy, N., Xiao, X., and How, J. P., “<b>PIETRA: Physics-Informed Evidential Learning for Traversing Out-of-Distribution Terrain</b>,” <i>arXiv:2409.03005</i>, 2024.</span>
+
+					</li>
+				
+					<li>
+						
+<span id="cai2024evora">Cai, X., Ancha, S., Sharma, L., Osteen, P. R., Bucher, B., Phillips, S., Wang, J., Everett, M., Roy, N., and How, J. P., “<b>EVORA: Deep Evidential Traversability Learning for Risk-Aware Off-Road Autonomy</b>,” <i>IEEE Transactions on Robotics</i>, vol. 40, 2024, pp. 3756–3777.</span>
+
+					</li>
+				
+					<li>
+						
+<span id="sharma2023ramp">Sharma, L., Everett, M., Lee, D., Cai, X., Osteen, P., and How, J. P., “<b>RAMP: A Risk-Aware Mapping and Planning Pipeline for Fast Off-Road Ground Robot Navigation</b>,” <i>2023 IEEE International Conference on Robotics and Automation (ICRA)</i>, IEEE, 2023, pp. 5730–5736.</span>
+
+					</li>
+				
+					<li>
+						
+<span id="cai2023probabilistic">Cai, X., Everett, M., Sharma, L., Osteen, P. R., and How, J. P., “<b>Probabilistic Traversability Model for Risk-Aware Motion Planning in Off-Road Environments</b>,” <i>2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</i>, 2023.</span>
+
+					</li>
+				
+					<li>
+						
+<span id="cai2022risk">Cai, X., Everett, M., Fink, J., and How, J. P., “<b>Risk-Aware Off-Road Navigation via a Learned Speed Distribution Map</b>,” <i>2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</i>, IEEE, 2022, pp. 2931–2937.</span>
 
 					</li>
 				
