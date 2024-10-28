@@ -1,5 +1,5 @@
 ---
-active: true
+active: false
 kerberos: xyc
 name: Xiaoyi (Jeremy) Cai
 office: 31-235G

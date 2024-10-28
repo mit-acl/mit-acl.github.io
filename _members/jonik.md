@@ -1,5 +1,5 @@
 ---
-active: true
+active: false
 kerberos: jonik
 name: Joana Nikolova
 office: 31-248D
