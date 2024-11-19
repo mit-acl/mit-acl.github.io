@@ -19,11 +19,15 @@ links:
   url: https://github.com/kotakondo
 
 education:
-- type: M.S.
+- type: Ph.D.
   study: Aeronautics and Astronautics
   school: MIT
   current: true
-  start: 2021
+  start: 2023
+- type: M.S.
+  study: Aeronautics and Astronautics
+  school: MIT
+  graduation: 2023
 - type: Exchange Program
   study: Aerospace Engineering
   school: University of Michigan
