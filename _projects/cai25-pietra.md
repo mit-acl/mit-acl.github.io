@@ -1,15 +1,15 @@
 ---
 title: Physics-Informed Evidential Traversability Learning
 subtitle:
-date: 2024-09-09
+date: 2025-01-08
 description: Incorporating physics knowledge into learned models for traversing out-of-distribution terrain
 summary:
 authors:
 - xyc
 - queeney
-featured_image: '/images/projects/2024_pietra.png'
+featured_image: '/images/projects/2025_pietra.png'
 papers:
-- cai2024pietra
+- cai2025pietra
 active: true
 ---
 
