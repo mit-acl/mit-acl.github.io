@@ -22,6 +22,7 @@ RUN curl -sSL https://get.rvm.io | bash -s stable
 # REFERENCE: https://stackoverflow.com/a/72991803
 RUN . /usr/local/rvm/scripts/rvm && rvm pkg install openssl
 RUN . /usr/local/rvm/scripts/rvm && rvm install ruby-2.6 --with-openssl-dir=/usr/local/rvm/usr
+RUN . /usr/local/rvm/scripts/rvm && gem update --system 3.2.3
 RUN . /usr/local/rvm/scripts/rvm && gem install bundler -v 2.4.22
 
 # Copy Gem files to Docker so we can make install all the needed packages
