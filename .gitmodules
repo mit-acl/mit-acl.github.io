@@ -1,3 +1,6 @@
 [submodule "bibliography"]
-	path = bibliography
+	path = _bibliography
+	url = https://github.com/mit-acl/bibliography.git
+[submodule "_bibliography"]
+	path = _bibliography
 	url = https://github.com/mit-acl/bibliography.git
