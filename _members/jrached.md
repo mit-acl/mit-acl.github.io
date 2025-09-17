@@ -2,7 +2,7 @@
 active: true
 kerberos: jrached
 name: Juan Rached
-portrait: /images/members/jrached_headshot.jpeg
+portrait: /images/members/jrached.jpg
 position: Master
 title: Master's Candidate
 
