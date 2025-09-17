@@ -1,5 +1,5 @@
 ---
-active: true
+active: false
 kerberos: queeney
 name: Jimmy Queeney
 office: 31-248F
