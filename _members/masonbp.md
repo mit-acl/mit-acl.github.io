@@ -4,8 +4,8 @@ kerberos: masonbp
 name: Mason Peterson
 office: 31-236C
 portrait: /images/members/masonbp.jpg
-position: Master
-title: Master's Candidate
+position: PhD
+title: PhD Student
 
 links:
 - type: LinkedIn

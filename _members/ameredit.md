@@ -1,11 +1,11 @@
 ---
 active: true
 kerberos: ameredit
-name: Alex Meredith 
+name: Alex Rose
 office: 31-234
 portrait: /images/members/ameredit.jpg
 position: PhD
-title: PhD Student
+title: PhD Candidate
 
 links: # You can use any link you want. The URL is displayed with the text in the *type* field. 
 - type: LinkedIn
@@ -17,6 +17,7 @@ education:
 - type: PhD
   study: Aerospace Engineering
   school: MIT
+  graduation: 2023-present
   current: true
 - type: SM
   study: Aerospace Engineering 

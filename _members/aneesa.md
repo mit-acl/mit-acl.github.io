@@ -4,8 +4,8 @@ kerberos: aneesa
 name: Aneesa Sonawalla
 office: 31-234E
 portrait: /images/members/aneesa.jpg
-position: Master
-title: Master's Candidate
+position: PhD
+title: PhD Student
 
 links:
 - type: LinkedIn
