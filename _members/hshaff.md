@@ -1,5 +1,5 @@
 ---
-active: true
+active: false
 kerberos: hshaff
 name: Hannah Shafferman
 office: 31-236F
