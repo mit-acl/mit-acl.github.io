@@ -7,7 +7,7 @@ portrait: /images/members/omatt431.jpg
 position: Master
 title: Master's Candidate
 links:
-  -type: LinkedIn
+  - type: LinkedIn
     url: https://www.linkedin.com/in/owen-matteson-6159b7236/
 education:
 - type: SM
