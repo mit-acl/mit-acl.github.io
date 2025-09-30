@@ -7,7 +7,7 @@ title: Welcome to ACL
 	<img src="/images/posts/welcome/global_localization.jpg">
 	<img src="/images/posts/welcome/kimera_fleet.jpg">
 	<img src="/images/posts/welcome/jackal_figure.jpg">
-	<img src="/images/posts/welcome/object_tracking.png">
+	<img src="/images/posts/welcome/object_matching.jpg">
 </div>
 We research topics related to autonomous systems and control design for aircraft, spacecraft, and ground vehicles. Theoretical research is pursued in areas such as: 
 
