@@ -7,14 +7,15 @@ RUN apt-get install -q -y --no-install-recommends apt-utils
 RUN apt-get install -q -y --no-install-recommends net-tools iproute2 iputils-ping curl
 RUN apt-get install -q -y --no-install-recommends git tmux vim apt-utils
 RUN apt-get install -q -y --no-install-recommends gnupg2 ca-certificates
-#RUN apt-get autoremove -y
+RUN apt-get autoremove -y
 RUN apt-get clean
 #RUN rm -rf /var/lib/apt/lists/*
 
 SHELL ["/bin/bash", "-c"]
 
 # https://rvm.io/
-RUN gpg2 --keyserver keyserver.ubuntu.com --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+#RUN gpg --keyserver keyserver.ubuntu.com --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+RUN gpg2 -v --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 #RUN \curl -sSL https://get.rvm.io | bash -s stable --rails
 RUN curl -sSL https://get.rvm.io | bash -s stable
 
