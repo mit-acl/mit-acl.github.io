@@ -25,4 +25,5 @@ education:
 
 interests:
 - Multi-Agent SLAM
+- Perception
 ---
