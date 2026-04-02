@@ -1,11 +1,11 @@
 ---
-title: Global Localization via Open-Set Object Mapping and Alignment
-date: 2024-09-01
+title: Open-Set Object Mapping and Loop Closures
+date: 2025-06-01
 
 description: This project presents an outdoor global localization method based on robust registration of open-set segment maps.
 summary: (optional) One paragraph summary
 
-featured_image: '/images/projects/global_loc_obj_map.png'
+featured_image: '/images/projects/object_matching.jpg'
 
 authors:
 - masonbp
@@ -16,9 +16,10 @@ papers (optional):
 - 
 
 active: true
+redirect_to: https://acl.mit.edu/roman/
 ---
 
-![](/images/projects/global_loc_obj_map.png)
+![](/images/projects/object_matching.jpg)
 
 ## About
 
