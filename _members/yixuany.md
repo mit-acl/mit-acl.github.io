@@ -4,8 +4,8 @@ kerberos: yixuany
 name: Yixuan (Lucas) Jia
 office: 31-234B
 portrait: /images/members/yixuany.jpg
-position: Master
-title: Master's Candidate
+position: PhD
+title: PhD Candidate
 
 education:
 - type: B.S.
