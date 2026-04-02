@@ -38,12 +38,12 @@
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Constraint-Aware Refinement for Safety Verification of Neural Feedback Loops - Aerospace Controls Laboratory">
 	<meta name="twitter:description" content="This project developed an approach to reduce conservativeness in reachable set calculations for neural feedback loops">
-	<meta name="twitter:image:src" content="/images/projects/CARV.png">
+	<meta name="twitter:image:src" content="/images/projects/carv.gif">
 
 	<!-- Facebook OpenGraph -->
 	<meta property="og:title" content="Constraint-Aware Refinement for Safety Verification of Neural Feedback Loops - Aerospace Controls Laboratory" />
 	<meta property="og:description" content="This project developed an approach to reduce conservativeness in reachable set calculations for neural feedback loops" />
-	<meta property="og:image" content="/images/projects/CARV.png" />
+	<meta property="og:image" content="/images/projects/carv.gif" />
 
 	
 	<!-- Font Embed Code -->
@@ -269,19 +269,34 @@ gtag('config', 'UA-47348607-4'); </script>
 	<div class="wrap">
 
 		<h3 id="about">About</h3>
-<p>Neural networks~(NNs) are becoming increasingly popular in the design of control pipelines for autonomous systems. However, since the performance of NNs can degrade in the presence of out-of-distribution data or adversarial attacks, systems that have NNs in their control pipelines, i.e., neural feedback loops~(NFLs), need safety assurances before they can be applied in safety-critical situations. Reachability analysis offers a solution to this problem by calculating reachable sets that bound the possible future states of an NFL and can be checked against dangerous regions of the state space to verify that the system does not violate safety constraints. Since exact reachable sets are generally intractable to calculate, reachable set over approximations~(RSOAs) are typically used. The problem with RSOAs is that they can be overly conservative, making it difficult to verify the satisfaction of safety constraints, especially over long time horizons or for highly nonlinear NN control policies. Refinement strategies such as partitioning or symbolic propagation are typically used to limit the overconservativeness of RSOAs, but these approaches come with a high computational cost and often can only be used to verify safety for simple reachability problems. This project presents Constraint-Aware Refinement for Verification (CARV): an efficient refinement strategy that reduces the overconservativeness of RSOAs by explicitly using the safety constraints on the NFL to refine RSOAs only where necessary.</p>
+<p>Neural networks (NNs) are becoming increasingly popular in the design of control pipelines for autonomous systems. However, since the performance of NNs can degrade in the presence of out-of-distribution data or adversarial attacks, systems that have NNs in their control pipelines, i.e., neural feedback loops (NFLs), need safety assurances before they can be applied in safety-critical situations. Reachability analysis offers a solution to this problem by calculating reachable sets that bound the possible future states of an NFL and can be checked against dangerous regions of the state space to verify that the system does not violate safety constraints. Since exact reachable sets are generally intractable to calculate, reachable set over approximations (RSOAs) are typically used. The problem with RSOAs is that they can be overly conservative, making it difficult to verify the satisfaction of safety constraints, especially over long time horizons or for highly nonlinear NN control policies. Refinement strategies such as partitioning or symbolic propagation are typically used to limit the overconservativeness of RSOAs, but these approaches come with a high computational cost and often can only be used to verify safety for simple reachability problems. This project presents Constraint-Aware Refinement for Verification (CARV): an efficient refinement strategy that reduces the overconservativeness of RSOAs by explicitly using the safety constraints on the NFL to refine RSOAs only where necessary.</p>
 
-<p><img src="/images/projects/CARV.png" alt="" /></p>
+<!-- ![](/images/projects/CARV.png) -->
+<p><img src="/images/projects/carv.gif" alt="" /></p>
 
-<h3 id="software">Software</h3>
+<h3 id="links">Links</h3>
 
-<p>Coming soon.</p>
+<ul>
+  <li><a href="https://ieeexplore.ieee.org/abstract/document/10804193">Paper</a></li>
+  <li><a href="https://github.com/mit-acl/CARV">Code</a></li>
+</ul>
 
 <h3 id="sponsor">Sponsor</h3>
 
 <p>This research is funded by Ford Motor Company.</p>
 
 
+		
+			<h3>Related Publications</h3>
+			<ul class="papers">
+				
+					<li>
+						
+<span id="rober2024constraint">Rober, N., and How, J. P., “<b>Constraint-Aware Refinement for Safety Verification of Neural Feedback Loops</b>,” <i>IEEE Control Systems Letters</i>, 2024.</span>
+
+					</li>
+				
+			</ul>
 		
 	</div>
 
