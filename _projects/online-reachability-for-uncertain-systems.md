@@ -10,6 +10,10 @@ featured_image: '/images/projects/heron_reachability_icon.png'
 authors:
 - nrober
 
+papers:
+- rober2024online
+- mahesh2025safe
+
 
 active: true
 ---
@@ -20,7 +24,7 @@ As autonomy pipelines become more complex, possibly including learned components
 
 ![](/images/projects/heron_reachability.png)
 
-### Software
+### Links
 
-Software is in review.
+* [Paper](https://ieeexplore.ieee.org/abstract/document/10610163)
 
