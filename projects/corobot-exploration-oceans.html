@@ -18,6 +18,8 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
+	
+
 	<!-- Favicons -->
 	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
@@ -392,6 +394,21 @@ gtag('config', 'UA-47348607-4'); </script>
 	<!-- Extra Footer JS Code -->
 	
 	
+
+	<script>
+	(function() {
+		function checkRedirect() {
+			var el = document.querySelector('.page__content[data-redirect-to]');
+			if (el) window.location.replace(el.getAttribute('data-redirect-to'));
+		}
+		// Watch for the AJAX loader swapping in a new .page__content
+		var observer = new MutationObserver(function() {
+			checkRedirect();
+		});
+		var page = document.querySelector('.page');
+		if (page) observer.observe(page, { childList: true });
+	})();
+	</script>
 
 
 </body>

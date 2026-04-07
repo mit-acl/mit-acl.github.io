@@ -18,6 +18,12 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
+	
+	<meta http-equiv="refresh" content="0; url=https://acl.mit.edu/roman/">
+	<link rel="canonical" href="https://acl.mit.edu/roman/">
+	<script>window.location.replace("https://acl.mit.edu/roman/");</script>
+	
+
 	<!-- Favicons -->
 	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
@@ -30,20 +36,20 @@
 	<meta name="theme-color" content="#ffffff">
 
 	<!-- Page Info -->
-	<title>Global Localization via Open-Set Object Mapping and Alignment - Aerospace Controls Laboratory</title>
+	<title>Open-Set Object Mapping and Loop Closures - Aerospace Controls Laboratory</title>
 
 	<meta name="description" content="This project presents an outdoor global localization method based on robust registration of open-set segment maps.">
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Global Localization via Open-Set Object Mapping and Alignment - Aerospace Controls Laboratory">
+	<meta name="twitter:title" content="Open-Set Object Mapping and Loop Closures - Aerospace Controls Laboratory">
 	<meta name="twitter:description" content="This project presents an outdoor global localization method based on robust registration of open-set segment maps.">
-	<meta name="twitter:image:src" content="/images/projects/global_loc_obj_map.png">
+	<meta name="twitter:image:src" content="/images/projects/object_matching.jpg">
 
 	<!-- Facebook OpenGraph -->
-	<meta property="og:title" content="Global Localization via Open-Set Object Mapping and Alignment - Aerospace Controls Laboratory" />
+	<meta property="og:title" content="Open-Set Object Mapping and Loop Closures - Aerospace Controls Laboratory" />
 	<meta property="og:description" content="This project presents an outdoor global localization method based on robust registration of open-set segment maps." />
-	<meta property="og:image" content="/images/projects/global_loc_obj_map.png" />
+	<meta property="og:image" content="/images/projects/object_matching.jpg" />
 
 	
 	<!-- Font Embed Code -->
@@ -244,13 +250,13 @@ gtag('config', 'UA-47348607-4'); </script>
 	
 	<div class="page">
 
-		<div class="page__content" data-page-title="Global Localization via Open-Set Object Mapping and Alignment - Aerospace Controls Laboratory">
+		<div class="page__content" data-page-title="Open-Set Object Mapping and Loop Closures - Aerospace Controls Laboratory" data-redirect-to="https://acl.mit.edu/roman/">
 
 			<section class="intro">
 
 	<div class="wrap">
 
-		<h1>Global Localization via Open-Set Object Mapping and Alignment</h1>
+		<h1>Open-Set Object Mapping and Loop Closures</h1>
 		<p>
 			
 				
@@ -278,17 +284,8 @@ gtag('config', 'UA-47348607-4'); </script>
 
 	<div class="wrap">
 
-		<p><img src="/images/projects/global_loc_obj_map.png" alt="" /></p>
+		<p><img src="/images/projects/object_matching.jpg" alt="" /></p>
 
-<h2 id="about">About</h2>
-
-<p>Global localization is a fundamental capability enabling long-term and drift-free robot navigation.
-This work develops a global localization method based on robust registration of open-set segment maps.
-Our method detects and tracks segments using open-set image segmentation models that enable direct generalization to unseen environments.
-To perform global localization under the high outlier regimes, 
-we formulate a registration problem between small submaps of 3D segments 
-and solve for the correspondences using a graph-theoretic global data association approach.
-Further, to guide registration in highly noisy or ambiguous scenarios, we propose novel ways of incorporating additional information like semantics, geometric shape, and known gravity direction within the global data association formulation.</p>
 
 
 		
@@ -385,6 +382,21 @@ Further, to guide registration in highly noisy or ambiguous scenarios, we propos
 	<!-- Extra Footer JS Code -->
 	
 	
+
+	<script>
+	(function() {
+		function checkRedirect() {
+			var el = document.querySelector('.page__content[data-redirect-to]');
+			if (el) window.location.replace(el.getAttribute('data-redirect-to'));
+		}
+		// Watch for the AJAX loader swapping in a new .page__content
+		var observer = new MutationObserver(function() {
+			checkRedirect();
+		});
+		var page = document.querySelector('.page');
+		if (page) observer.observe(page, { childList: true });
+	})();
+	</script>
 
 
 </body>
