@@ -18,6 +18,12 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
+	{% if page.redirect_to %}
+	<meta http-equiv="refresh" content="0; url={{ page.redirect_to }}">
+	<link rel="canonical" href="{{ page.redirect_to }}">
+	<script>window.location.replace("{{ page.redirect_to }}");</script>
+	{% endif %}
+
 	<!-- Favicons -->
 	<link rel="apple-touch-icon" sizes="180x180" href="{{ site.data.settings.basic_settings.favicon_folder }}/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="{{ site.data.settings.basic_settings.favicon_folder }}/favicon-32x32.png">
@@ -89,7 +95,7 @@
 	
 	<div class="page">
 
-		<div class="page__content" data-page-title="{% if page.url == "/" %}{{ site.data.settings.basic_settings.site_title }} - {{ site.data.settings.basic_settings.site_tagline }}{% elsif page.url contains "/people/" %}{% if page.url contains "index" %}{{ page.title }} - {{ site.data.settings.basic_settings.site_title }}{% else %}{{ page.name }} - {{ site.data.settings.basic_settings.site_title }}{% endif %}{% else %}{{ page.title }} - {{ site.data.settings.basic_settings.site_title }}{% endif %}">
+		<div class="page__content" data-page-title="{% if page.url == "/" %}{{ site.data.settings.basic_settings.site_title }} - {{ site.data.settings.basic_settings.site_tagline }}{% elsif page.url contains "/people/" %}{% if page.url contains "index" %}{{ page.title }} - {{ site.data.settings.basic_settings.site_title }}{% else %}{{ page.name }} - {{ site.data.settings.basic_settings.site_title }}{% endif %}{% else %}{{ page.title }} - {{ site.data.settings.basic_settings.site_title }}{% endif %}"{% if page.redirect_to %} data-redirect-to="{{ page.redirect_to }}"{% endif %}>
 
 			{{ content }}
 
@@ -109,6 +115,21 @@
 	<!-- Extra Footer JS Code -->
 	{{ site.data.settings.advanced_settings.footer_js }}
 	{% endif %}
+
+	<script>
+	(function() {
+		function checkRedirect() {
+			var el = document.querySelector('.page__content[data-redirect-to]');
+			if (el) window.location.replace(el.getAttribute('data-redirect-to'));
+		}
+		// Watch for the AJAX loader swapping in a new .page__content
+		var observer = new MutationObserver(function() {
+			checkRedirect();
+		});
+		var page = document.querySelector('.page');
+		if (page) observer.observe(page, { childList: true });
+	})();
+	</script>
 
 
 </body>

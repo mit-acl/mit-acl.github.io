@@ -9,7 +9,7 @@ authors:
 - xyc
 featured_image: '/images/projects/gram_thumbnail.png'
 papers:
-- queeney2024gram
+- queeney2026gram
 active: true
 ---
 
