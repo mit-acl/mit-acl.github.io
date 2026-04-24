@@ -29,7 +29,7 @@ menu_settings:
       url: '/contact'
   quick_links:
     - title: 'Prof. Jonathan How'
-      url: http://www.mit.edu/people/jhow/
+      url: https://www.mit.edu/~jhow/
     - title: 'ACL Admin Assistant'
       url: /people/bryt
     - title: 'MIT AeroAstro'
