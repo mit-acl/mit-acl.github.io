@@ -5,7 +5,8 @@ description: The Aerospace Controls Laboratory at MIT
 featured_image: /images/social.jpg
 permalink: /contact/index.html
 ---
-{% include contact-form.html %}
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSemdCeUhIW-fjEYSEc_cG9hsPmLH7sqPxpD4zo5DCHkyjdAHw/viewform?embedded=true" width="640" height="723" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
 ### Aerospace Controls Laboratory
 Massachusetts Institute of Technology  
