@@ -1,5 +1,5 @@
 ---
-active: true
+active: false
 kerberos: timsmith
 name: Timothy Cavesmith
 office: 31-248D
@@ -15,8 +15,7 @@ education:
 - type: M.S.
   study: Aeronautics and Astronautics
   school: MIT
-  current: true
-  start: 2024
+  graduation: 2026
 - type: B.S.
   study: Astronautics
   school: USAFA
