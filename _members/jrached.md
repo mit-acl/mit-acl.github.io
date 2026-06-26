@@ -10,8 +10,7 @@ education:
 - type: MEng
   study: Electrical Engineering and Computer Science
   school: MIT
-  current: true
-  start: 2024 
+  graduation: 2026 
 - type: B.S.
   study: Electrical Engineering and Computer Science
   school: MIT

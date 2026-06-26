@@ -13,8 +13,7 @@ education:
 - type: M.Eng.
   study: Computer Science, Economics, & Data Science
   school: MIT
-  current: true
-  start: 2025 
+  graduation: 2026 
 - type: B.S.
   study: Aerospace Engineering & Computer Science, Economics, and Data Science
   school: MIT

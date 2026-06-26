@@ -17,8 +17,7 @@ education:
 - type: M.S.
   study: Aeronautics and Astronautics
   school: MIT
-  current: true
-  start: 2024
+  graduation: 2026
 - type: B.S.
   study: Robotics
   school: University of Michigan

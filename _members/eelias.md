@@ -13,8 +13,7 @@ education:
 - type: M.S.
   study: Aeronautics and Astronautics
   school: MIT
-  current: true
-  start: 2024
+  graduation: 2026
 - type: B.S.
   study: Electrical & Computer Engineering
   school: University of Rochester

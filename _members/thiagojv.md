@@ -17,8 +17,7 @@ education:
 - type: M.Eng.
   study: Robotics
   school: MIT
-  current: true
-  start: 2025
+  graduation: 2026
 - type: B.S.
   study: Computer Science
   school: MIT
