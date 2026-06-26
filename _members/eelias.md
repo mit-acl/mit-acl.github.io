@@ -4,8 +4,8 @@ kerberos: eelias36
 name: Eric Elias
 office: 31-236A
 portrait: /images/members/eelias.jpg
-position: Master
-title: Master's Candidate
+position: PhD
+title: PhD Candidate
 
 links:
 

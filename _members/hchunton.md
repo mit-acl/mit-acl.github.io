@@ -1,5 +1,5 @@
 ---
-active: true
+active: false
 kerberos: hchunton
 name: Hakan Chunton
 office: 31-232C

@@ -5,7 +5,7 @@ name: Aneesa Sonawalla
 office: 31-234E
 portrait: /images/members/aneesa.jpg
 position: PhD
-title: PhD Student
+title: PhD Candidate
 
 links:
 - type: LinkedIn

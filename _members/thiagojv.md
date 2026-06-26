@@ -1,5 +1,5 @@
 ---
-active: true
+active: false
 kerberos: thiagojv
 name: Thiago Veloso
 office: 31-230

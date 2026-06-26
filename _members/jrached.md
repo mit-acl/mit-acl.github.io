@@ -1,5 +1,5 @@
 ---
-active: true
+active: false
 kerberos: jrached
 name: Juan Rached
 portrait: /images/members/jrached.jpg

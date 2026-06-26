@@ -4,8 +4,8 @@ kerberos: blakete
 name: Blake Edwards
 office: 31-248B
 portrait: /images/members/blakete.jpg
-position: Master
-title: Master's Candidate
+position: PhD
+title: PhD Candidate
 
 links:
 - type: LinkedIn
