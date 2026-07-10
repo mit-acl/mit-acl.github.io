@@ -27,14 +27,24 @@ education:
   graduation: 2025
 
 interests:
-- Multi-Agent Reinforcement Learning
-- Robot Manipulation and Control
+- Reinforcement Learning
+- Robotic Perception
 - Optimization
 
 awards:
 - name: Department of Defense SMART Scholarship
   date: 2025
+- name: George F. and Jean W. Bemis Award (University Senior Award)
+  date: 2025
+- name: Matthew Copithorne Scholarship (University Senior Award)
+  date: 2025
+- name: Order of the Cross and Crown - Marshal Distinction
+  date: 2025
+- name: AMS Top Senior Named Scholarship - Orville Endowed Family Scholarship
+  date: 2024
+- name: NOAA Ernest F. Hollings Scholar
+- date: 2023
 
 --- 
 
-I am a current student in ACL. I am interested in exploring reinforcement learning and control on both underwater and aerial platforms.
+I am a current student in ACL. I am interested in exploring reinforcement learning and computer vision on both underwater and aerial platforms.
