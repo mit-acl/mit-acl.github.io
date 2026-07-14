@@ -1,14 +1,11 @@
 ---
-title: CORAL-AUV: CFD Oriented Reinforcement Learning for Autonomous Underwater Vehicles
-
-subtitle:
+title: "CORAL-AUV: CFD Oriented Reinforcement Learning for Autonomous Underwater Vehicles"
 
 date: 2026-07-10
 
 description: We use reinforcement learning to improve the control of an underwater autonomous vehicle that studies coral reefs.
 
 featured_image: '/images/projects/curee_auv_on_reef.png'
-image_alt: 
 
 authors:
 - rochesh
@@ -25,4 +22,4 @@ Fine grain control and positioning of autonomous underwater vehicles (AUVs) is c
 ### Videos
 
 **CUREE Exploring a Coral Reef using our RL controller** - May, 2026
-<iframe width="560" height="315" src="https://youtu.be/DWMBFCRHFsc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DWMBFCRHFsc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
