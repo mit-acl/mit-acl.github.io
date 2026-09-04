@@ -17,7 +17,7 @@ education:
 - type: PhD
   study: Aeronautics and Astronautics
   school: MIT
-  graduation: 2023-present
+  start: 2023
   current: true
 - type: M.Tech.
   study: Systems and Control Engineering
