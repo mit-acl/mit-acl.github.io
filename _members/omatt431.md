@@ -1,5 +1,5 @@
 ---
-active: true
+active: false
 kerberos: omatt431
 name: Owen Matteson
 office: 31-232G
@@ -13,8 +13,7 @@ education:
 - type: SM
   study: Aeronautics and Astronautics
   school: MIT
-  current: true
-  start: 2025
+  graduation: 2026
 - type: B.S.
   study: Aeronautics and Astronautics
   school: MIT

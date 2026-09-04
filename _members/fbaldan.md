@@ -1,5 +1,5 @@
 ---
-active: true
+active: false
 kerberos: fbaldan
 name: Federico Baldan
 office: 31-236C
@@ -21,8 +21,7 @@ education:
 - type: M.S.
   study: Aerospace Engineering
   school: Massachusetts Institute of Technology
-  current: true
-  start: 2026
+  graduation: 2026
 - type: M.S.
   study: Aerospace Engineering and Computer Science
   school: University of Washington

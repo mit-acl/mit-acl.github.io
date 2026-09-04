@@ -1,11 +1,11 @@
 ---
-active: true
+active: false
 kerberos: annikat
 name: Annika Thomas
 office: 31-234
 portrait: /images/members/annikat.jpg
 position: PhD
-title: PhD Candidate
+title: PhD
 
 links: # You can use any link you want. The URL is displayed with the text in the *type* field. 
 - type: LinkedIn
@@ -17,7 +17,7 @@ education:
 - type: Ph.D.
   study: Mechanical Engineering and Statistics
   school: MIT
-  current: true
+  graduation: 2026
 - type: M.S.
   study: Mechanical Engineering
   school: MIT

@@ -1,10 +1,10 @@
 ---
-active: true
+active: false
 kerberos: nrober
 name: Nicholas Rober
 portrait: /images/members/nrober.jpg
 position: PhD
-title: PhD Candidate
+title: PhD
 
 links:
 - type: Website
@@ -19,8 +19,7 @@ education:
 - type: Ph.D.
   sudy: Aeronautics and Astronautics
   school: MIT
-  start: 2023
-  current: true
+  graduation: 2026
 - type: M.S.
   study: Aeronautics and Astronautics
   school: MIT

@@ -1,10 +1,10 @@
 --- 
-active: true
+active: false
 kerberos: kkondo
 name: Kota Kondo
 portrait: /images/members/kkondo.jpg
 position: PhD
-title: PhD Candidate
+title: PhD
 
 links:
 - type: CV
@@ -22,8 +22,7 @@ education:
 - type: Ph.D.
   study: Aeronautics and Astronautics
   school: MIT
-  current: true
-  start: 2023
+  graduation: 2026
 - type: M.S.
   study: Aeronautics and Astronautics
   school: MIT
