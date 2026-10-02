@@ -490,9 +490,15 @@ gtag('config', 'UA-47348607-4'); </script>
 			var el = document.querySelector('.page__content[data-redirect-to]');
 			if (el) window.location.replace(el.getAttribute('data-redirect-to'));
 		}
+		// AJAX-loaded content doesn't run its inline scripts, so pages that need them
+		// (front matter `full_page_load: true`) are reloaded as a full page
+		function checkFullPageLoad() {
+			if (document.querySelector('.page .page__content[data-full-page-load]')) window.location.reload();
+		}
 		// Watch for the AJAX loader swapping in a new .page__content
 		var observer = new MutationObserver(function() {
 			checkRedirect();
+			checkFullPageLoad();
 		});
 		var page = document.querySelector('.page');
 		if (page) observer.observe(page, { childList: true });
