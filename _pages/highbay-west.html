@@ -1,0 +1,89 @@
+---
+title: High Bay West Calendar
+subtitle: Building 31 · Reservations for this week and next
+description: Reservations for the High Bay West space in Building 31
+permalink: /highbay-west/index.html
+full_page_load: true  # the calendar is built by the inline script below, which AJAX navigation won't run
+---
+
+<style>
+	/* The Google Calendar embed is cross-origin, so it can't be styled or scrolled. Instead each week
+	   loads it twice, tall enough that the whole day fits without the embed scrolling, and shows two
+	   clipped slices: the day-name header, and the 24-hour grid inside our own scroll box that opens
+	   at --start. This also drops the embed's "Add to Google Calendar" footer.
+	   Offsets are px measured inside the embed; it switches to a compact layout below 626px wide. */
+	.hbw { max-width: 900px; margin: 0 auto; }
+	.hbw__note { padding: 16px 20px; font-size: 18px; line-height: 1.5; background: #e8f0fe;
+	             border-left: 4px solid #0C5DF2; border-radius: 6px; }
+	.hbw__note a { color: #0C5DF2; font-weight: 500; white-space: nowrap; border-bottom: 2px solid #0C5DF2; }
+	.hbw__week { font-size: 20px; font-weight: 500; margin: 32px 0 10px; }
+	.hbw__week span { color: #56606d; font-weight: 300; margin-left: 6px; }
+	.hbw__cal { background: #fff; border: solid 1px #ddd; border-radius: 8px; overflow: hidden;
+	            --hour: 48px; --start: 9; --end: 17; --pad: 12px; }
+	/* Query containers; their content width (minus the reserved gutter) is the iframe's width */
+	.hbw__days, .hbw__hours { container-type: inline-size; scrollbar-gutter: stable; scrollbar-width: thin; }
+	.hbw__days  { overflow: hidden; }
+	.hbw__hours { overflow-y: auto; height: calc((var(--end) - var(--start)) * var(--hour) + 2 * var(--pad)); }
+	.hbw__clip { overflow: hidden;
+	             --card-top: 38px; --midnight: 123px; }        /* compact (phone) layout */
+	@container (min-width: 626px) {
+		.hbw__clip { --card-top: 56px; --midnight: 140px; }   /* wide (desktop) layout */
+	}
+	.hbw__clip iframe { display: block; width: 100%; height: 1400px; border: 0; }
+	.hbw__days .hbw__clip   { height: calc(var(--midnight) - var(--card-top) + 1px); }
+	.hbw__days iframe       { margin-top: calc(-1 * var(--card-top)); }
+	.hbw__hours .hbw__clip  { height: calc(24 * var(--hour)); }
+	.hbw__hours iframe      { margin-top: calc(-1 * var(--midnight)); }
+	@media (max-width: 480px) {
+		.hbw__note { font-size: 16px; padding: 14px 16px; }
+		.hbw__week { font-size: 18px; margin-top: 24px; }
+	}
+</style>
+
+<div class="hbw">
+
+	<div class="hbw__note">
+		To reserve the high bay, email
+		<a class="js-no-ajax" href="mailto:high-bay-west-admins@mit.edu?subject=High%20Bay%20West%20reservation%20request">high-bay-west-admins@mit.edu</a>
+		with your request. Reservations can only be made up to two weeks in advance.
+	</div>
+
+	<div id="hbw-weeks"></div>
+
+</div>
+
+<script>
+(function() {
+	// 31 Highbay West Reservations calendar (must be public in Google Calendar sharing settings)
+	var SRC = "src=OTIwM2ZiMTI3NTU2ZWMwNjIyNmU4OWI4M2JhZDY4ODcxMWE0YWQ5OTM2MDhkNDMyYWRmYzBmNjhiYjNjZmI5YUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%239e69af";
+	var BASE = "https://calendar.google.com/calendar/embed?wkst=1&ctz=America%2FNew_York&mode=WEEK"
+	         + "&showPrint=0&showNav=0&showTabs=0&showCalendars=0&showTitle=0&showTz=0&" + SRC;
+
+	function pad2(n) { return String(n).padStart(2, "0"); }
+	function ymd(d) { return "" + d.getFullYear() + pad2(d.getMonth() + 1) + pad2(d.getDate()); }
+	function fmt(d) { return d.toLocaleDateString("en-US", { month: "short", day: "numeric" }); }
+
+	function slice(cls, url, label) {
+		return '<div class="' + cls + '"><div class="hbw__clip"><iframe src="' + url + '" frameborder="0"'
+		     + ' scrolling="no" title="' + label + '"></iframe></div></div>';
+	}
+
+	// wkst=1 → weeks start Sunday
+	var thisSun = new Date(); thisSun.setHours(0, 0, 0, 0); thisSun.setDate(thisSun.getDate() - thisSun.getDay());
+
+	document.getElementById("hbw-weeks").innerHTML = [["This week", 0], ["Next week", 7]].map(function(w) {
+		var s = new Date(thisSun); s.setDate(s.getDate() + w[1]);
+		var e = new Date(s);       e.setDate(e.getDate() + 6);
+		var url = BASE + "&dates=" + ymd(s) + "/" + ymd(e);
+		return '<div class="hbw__week">' + w[0] + '<span>' + fmt(s) + ' – ' + fmt(e) + '</span></div>'
+		     + '<div class="hbw__cal">' + slice("hbw__days", url, w[0] + " (days)") + slice("hbw__hours", url, w[0]) + '</div>';
+	}).join("");
+
+	// Open each week's scroll box at --start, with --pad px above so the hour label shows
+	document.querySelectorAll(".hbw__hours").forEach(function(el) {
+		var css = getComputedStyle(el);
+		el.scrollTop = parseFloat(css.getPropertyValue("--start")) * parseFloat(css.getPropertyValue("--hour"))
+		             - parseFloat(css.getPropertyValue("--pad"));
+	});
+})();
+</script>
