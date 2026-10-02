@@ -1,6 +1,6 @@
 ---
 title: High Bay West Calendar
-subtitle: Building 31 · Reservations for this week and next
+subtitle: Building 31 · Reservations for the next three weeks
 description: Reservations for the High Bay West space in Building 31
 permalink: /highbay-west/index.html
 full_page_load: true  # the calendar is built by the inline script below, which AJAX navigation won't run
@@ -71,7 +71,7 @@ full_page_load: true  # the calendar is built by the inline script below, which 
 	// wkst=1 → weeks start Sunday
 	var thisSun = new Date(); thisSun.setHours(0, 0, 0, 0); thisSun.setDate(thisSun.getDate() - thisSun.getDay());
 
-	document.getElementById("hbw-weeks").innerHTML = [["This week", 0], ["Next week", 7]].map(function(w) {
+	document.getElementById("hbw-weeks").innerHTML = [["This week", 0], ["Next week", 7], ["Week after next", 14]].map(function(w) {
 		var s = new Date(thisSun); s.setDate(s.getDate() + w[1]);
 		var e = new Date(s);       e.setDate(e.getDate() + 6);
 		var url = BASE + "&dates=" + ymd(s) + "/" + ymd(e);
