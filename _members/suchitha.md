@@ -9,12 +9,17 @@ title: Master's Candidate
 
 links:
 - type: LinkedIn
-  url: www.linkedin.com/in/suchitha-channapatna
+  url: https://www.linkedin.com/in/suchitha-channapatna
 
 education:
+- type: M.S.
+  study: Aeronautics and Astronautics
+  school: MIT
+  current: true
+  start: 2026
 - type: B.S.
-  study: Aerospace Engineering
-  school: Massachusetts Institute of Technology
+  study: Aeronautics and Astronautics
+  school: MIT
   graduation: 2026
 
 interests:
