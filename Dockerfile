@@ -1,6 +1,6 @@
 # Single image used for both local dev (astro dev) and producing the static
 # build (astro build). Node lives only in here — the host needs just Docker.
-FROM node:20-alpine
+FROM node:22-alpine
 
 WORKDIR /app
 
