@@ -1,10 +1,12 @@
 # Builds the site and publishes it to GitHub Pages on every push to main.
+# Pull requests are built (and the site uploaded as an artifact) but not deployed.
 # Repo setting required once: Settings -> Pages -> Source: "GitHub Actions".
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
+  pull_request:
   # Rebuild on demand from the Actions tab.
   workflow_dispatch:
 
@@ -14,7 +16,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -36,6 +38,7 @@ jobs:
           path: dist
 
   deploy:
+    if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     environment:
