@@ -1,6 +1,6 @@
 ---
 title: High Bay West Calendar
-subtitle: Building 31 · Reservations for this week and next
+subtitle: Building 31 · Reservations for the next 14 days
 description: Reservations for the High Bay West space in Building 31
 permalink: /highbay-west/index.html
 full_page_load: true  # the calendar is built by the inline script below, which AJAX navigation won't run
@@ -56,7 +56,10 @@ full_page_load: true  # the calendar is built by the inline script below, which 
 (function() {
 	// 31 Highbay West Reservations calendar (must be public in Google Calendar sharing settings)
 	var SRC = "src=OTIwM2ZiMTI3NTU2ZWMwNjIyNmU4OWI4M2JhZDY4ODcxMWE0YWQ5OTM2MDhkNDMyYWRmYzBmNjhiYjNjZmI5YUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%239e69af";
-	var BASE = "https://calendar.google.com/calendar/embed?wkst=1&ctz=America%2FNew_York&mode=WEEK"
+	// Rolling 14 days: start each 7-day "week" on today. wkst is the week's first weekday,
+	// 1 = Sunday ... 7 = Saturday, and the embed accepts any of the seven.
+	var today = new Date(); today.setHours(0, 0, 0, 0);
+	var BASE = "https://calendar.google.com/calendar/embed?wkst=" + (today.getDay() + 1) + "&ctz=America%2FNew_York&mode=WEEK"
 	         + "&showPrint=0&showNav=0&showTabs=0&showCalendars=0&showTitle=0&showTz=0&" + SRC;
 
 	function pad2(n) { return String(n).padStart(2, "0"); }
@@ -68,11 +71,8 @@ full_page_load: true  # the calendar is built by the inline script below, which 
 		     + ' scrolling="no" title="' + label + '"></iframe></div></div>';
 	}
 
-	// wkst=1 → weeks start Sunday
-	var thisSun = new Date(); thisSun.setHours(0, 0, 0, 0); thisSun.setDate(thisSun.getDate() - thisSun.getDay());
-
-	document.getElementById("hbw-weeks").innerHTML = [["This week", 0], ["Next week", 7]].map(function(w) {
-		var s = new Date(thisSun); s.setDate(s.getDate() + w[1]);
+	document.getElementById("hbw-weeks").innerHTML = [["Next 7 days", 0], ["Following 7 days", 7]].map(function(w) {
+		var s = new Date(today); s.setDate(s.getDate() + w[1]);
 		var e = new Date(s);       e.setDate(e.getDate() + 6);
 		var url = BASE + "&dates=" + ymd(s) + "/" + ymd(e);
 		return '<div class="hbw__week">' + w[0] + '<span>' + fmt(s) + ' – ' + fmt(e) + '</span></div>'
