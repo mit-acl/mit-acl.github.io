@@ -1,0 +1,27 @@
+# Local development for the ACL website.
+#   ./serve.sh            -> live dev server at http://localhost:4321
+#   ./serve.sh build      -> produce the static site into ./dist
+#
+# Nothing here deploys anywhere; this is purely for previewing changes locally
+# before you commit them.
+services:
+  web:
+    build: .
+    ports:
+      - "4321:4321"
+    volumes:
+      # Live-mount the project so edits to Markdown/components hot-reload.
+      # node_modules is populated on the host from the image (Linux/alpine
+      # build) and carried in via this bind mount. We previously shadowed it
+      # with an anonymous volume (`- /app/node_modules`), but this Docker
+      # Desktop version fails to auto-populate that volume from the image under
+      # `compose up` (astro: not found), so we rely on the bind mount instead.
+      - .:/app
+      # Astro deletes and recreates .astro/ on every run, which fails with
+      # ENOENT on Docker Desktop bind mounts; keep it inside the container.
+      - /app/.astro
+    environment:
+      # macOS bind mounts don't emit native fs events; poll so HMR works.
+      - CHOKIDAR_USEPOLLING=true
+      - CHOKIDAR_INTERVAL=300
+    command: npm run dev

@@ -1,0 +1,150 @@
+---
+// The lab directory (formerly _pages/people.html). Sections come from
+// `positions` in src/data/site.ts; faculty and UROPs from src/data/people.ts.
+import { getCollection } from 'astro:content';
+import Default from '../../layouts/Default.astro';
+import { site } from '../../data/site';
+import { extraPeople } from '../../data/people';
+import { byString } from '../../lib/order';
+
+const byName = <T extends { name: string }>(a: T, b: T) => byString(a.name, b.name);
+const members = (await getCollection('members')).map((m) => ({ ...m.data, url: `/people/${m.id}` }));
+
+const faculty = extraPeople.filter((p) => p.position === 'Faculty');
+const sections = site.positions
+  .map((pos) => ({
+    header: pos.header,
+    people: members.filter((m) => m.position === pos.type && m.active).sort(byName),
+  }))
+  .filter((s) => s.people.length > 0);
+const superUrops = extraPeople.filter((p) => p.position === 'SuperUROP' && p.active).sort(byName);
+const urops = extraPeople.filter((p) => p.position === 'UROP' && p.active).sort(byName);
+const alumni = members.filter((m) => m.active === false).sort(byName);
+---
+
+<Default title="People" description="ACL Directory">
+  <section class="intro">
+    <div class="wrap" id="member">
+      <h1>People</h1>
+      <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0" class="member-listing">
+        <tr>
+          <td>
+            <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+              {
+                faculty.length > 0 && (
+                  <>
+                    <tr class="member-heading">
+                      <td width="100%" colspan="2" valign="bottom">
+                        <h2>Faculty</h2>
+                      </td>
+                    </tr>
+                    {faculty.map((member) => (
+                      <tr class="member-listing">
+                        <td width="15%" class="side-portrait">
+                          <div class="image-cropper">
+                            <img src={member.portrait || '/images/members/default.png'} width="100%" />
+                          </div>
+                        </td>
+                        <td width="80%" valign="center">
+                          <h5>{member.webpage ? <a href={member.webpage}>{member.name}</a> : member.name}</h5>
+                          <p>
+                            <i>{member.title}</i>
+                          </p>
+                        </td>
+                      </tr>
+                    ))}
+                  </>
+                )
+              }
+
+              {
+                sections.map((section) => (
+                  <>
+                    <tr>
+                      <td width="100%" colspan="2" valign="bottom" class="member-heading">
+                        <h2>{section.header}</h2>
+                      </td>
+                    </tr>
+                    {section.people.map((member) => (
+                      <tr>
+                        <td width="15%" class="side-portrait">
+                          <div class="image-cropper">
+                            <img src={member.portrait} width="100%" />
+                          </div>
+                        </td>
+                        <td width="80%" valign="center" class="member-listing">
+                          <h6>
+                            <a href={member.url}>{member.name}</a>
+                          </h6>
+                        </td>
+                      </tr>
+                    ))}
+                  </>
+                ))
+              }
+
+              {
+                [
+                  { header: 'SuperUROPs', people: superUrops },
+                  { header: 'UROPs', people: urops },
+                ]
+                  .filter((s) => s.people.length > 0)
+                  .map((s) => (
+                    <>
+                      <tr>
+                        <td width="100%" colspan="2" valign="bottom" class="member-heading">
+                          <h2>{s.header}</h2>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="100%" colspan="2" valign="center">
+                          <ul>
+                            {s.people.map((member) => (
+                              <li>
+                                <p class="member-listing">{member.name}</p>
+                              </li>
+                            ))}
+                          </ul>
+                        </td>
+                      </tr>
+                    </>
+                  ))
+              }
+
+              {
+                alumni.length > 0 && (
+                  <>
+                    <tr>
+                      <td width="100%" colspan="2" valign="bottom" class="member-heading">
+                        <h2>Alumni</h2>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="100%" colspan="2" valign="center">
+                        <ul>
+                          {alumni.map((member) => (
+                            <li>
+                              <a href={member.url}>
+                                <p class="member-listing">{member.name}</p>
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </td>
+                    </tr>
+                  </>
+                )
+              }
+            </table>
+          </td>
+        </tr>
+      </table>
+      <p align="right">
+        <font size="2">
+          Credit to <a href="https://people.eecs.berkeley.edu/~barron/">Jon Barron</a> for the source code used in
+          ACL member portfolios
+        </font>
+      </p>
+    </div>
+  </section>
+</Default>
