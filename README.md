@@ -12,7 +12,7 @@ cd mit-acl.github.io
 
 ## Running it locally
 
-You only need **Docker** installed (no Node.js, no Ruby). Then:
+You only need **Docker** installed. Then:
 
 ```bash
 ./serve.sh            # live preview at http://localhost:4321 (auto-reloads as you edit)
@@ -29,7 +29,7 @@ The first run builds the Docker image (~30s); after that it starts in a few seco
 
 ## Deploying
 
-Pushing to `main` deploys automatically: the [Deploy to GitHub Pages](.github/workflows/deploy.yml)
+Open a PR to deploy any website changes. When your PR is approved and merged into `main`, it will deploy automatically: the [Deploy to GitHub Pages](.github/workflows/deploy.yml)
 workflow builds the site and publishes it. Check its progress
 [here](https://github.com/mit-acl/mit-acl.github.io/actions). To redeploy without a code change,
 run the workflow manually from the Actions tab.
@@ -56,7 +56,7 @@ Images and other files go under `public/` and are linked without the `public` pr
 ### Publications
 
 All ACL publications live in [`bibliography/ACL_Publications.bib`](bibliography/ACL_Publications.bib)
-(formerly the separate `mit-acl/bibliography` repo, merged here with its history). Add or fix entries
+(formerly the separate `mit-acl/bibliography` repo). Add or fix entries
 there and the Publications page rebuilds from it; see [`bibliography/README.md`](bibliography/README.md)
 for the validation and merge scripts. The dev server reads the file once at startup, so restart it
 (`./serve.sh stop && ./serve.sh`) to see bibliography edits.
@@ -66,12 +66,9 @@ under `papers:` in the front matter.
 
 ## New Students
 
-If you're a new student, you need to be added to the website.
-Reach out to the [current ACL webmaster](https://wikis.mit.edu/confluence/pages/viewpage.action?pageId=123502773) via Slack and provide the following:
+If you're a new student, you need to be added to the website. You can do this via a PR that adds:
 1. A headshot (i.e. `.jpg` or `.png`)
-2. Markdown providing your information. [(See this example.)](howto/template_member.md)
-
-Alternatively, if you're comfortable with GitHub, you're welcome to make the changes yourself and submit a pull request.
+2. Markdown providing your information [(See this example.)](howto/template_member.md)
 
 ## How it's organized
 
@@ -91,5 +88,4 @@ bibliography/       ACL_Publications.bib, the AIAA citation style, and helper sc
 
 ## Notes
 
-* Derived from [the old private website repo](https://github.com/mit-acl/website). (Didn't fork because of the LFS files committed directly to the old repo.)
 * The visual theme is "Index" by JekyllThemes.io; see [`_LICENSE.md`](_LICENSE.md).
