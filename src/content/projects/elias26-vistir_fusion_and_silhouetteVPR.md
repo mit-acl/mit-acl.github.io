@@ -2,10 +2,10 @@
 title: Illumination-Robust Navigation around Unknown Space  Objects using Multispectral Imagery
 subtitle:
 date: 2026-09-04
-description: We use a fuse visible and thermal camera to provide illumination-robust localization around an unknown 
+description: We fuse visible and thermal camera imagery to provide illumination-robust localization around an unknown space object.
 authors:
 - eelias36
-featured_image: '/images/projects/efficient_rtmpc_learning_cover_img.png'
+featured_image: '/images/projects/vis_tir_fusion.png'
 papers:
 - elias2026scitech
 active: true
