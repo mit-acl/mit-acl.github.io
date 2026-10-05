@@ -1,0 +1,171 @@
+
+// - - - - - - - - - - Foundations
+
+@import "sass/_reset";
+@import "sass/_mixins";
+@import "sass/_plugins";
+
+// - - - - - - - - - - Variables
+
+
+// Colors
+
+$background-color: #ffffff;
+$background-alt-color: #F5F7FA;
+$border-color: #dddddd;
+
+$text-dark-color: #1f2328;
+$text-medium-color: #56606d;
+$text-light-color: #ABB7B7;
+
+$accent-color: #0C5DF2;
+
+$overlay-background-color: #0C5DF2;
+$overlay-background-color-one: #448EF6;
+$overlay-background-color-two: #09619D;
+$overlay-background-color-three: #00204A;
+$overlay-text-color: #ffffff;
+$overlay-accent-color: #2A2F36;
+
+$error-color: #D64541;
+
+
+// Fonts
+
+$body-font: "Montserrat", sans-serif;
+$title-font: "Montserrat", sans-serif;
+
+$regular-weight: 300;
+$bold-weight: 500;
+
+
+// Typography
+
+$sitetitle-small: 25px;
+$sitetitle-medium: 35px;
+$sitetitle-large: 45px;
+$sitetitle-weight: 500;
+$sitetitle-spacing: -0.02em;
+
+$sitetagline-small: 16px;
+$sitetagline-medium: 18px;
+$sitetagline-large: 20px;
+$sitetagline-weight: 500;
+$sitetagline-spacing: 0em;
+$sitetagline-lineheight: 1.5;
+
+$menu-small: 30px;
+$menu-medium: 15px;
+$menu-large: 18px;
+$menu-weight: 500;
+$menu-spacing: 0em;
+
+$grid-item-title-small: 22px;
+$grid-item-title-medium: 26px;
+$grid-item-title-large: 30px;
+$grid-item-title-weight: 500;
+$grid-item-title-spacing: -0.02em;
+
+$grid-item-subtitle-small: 15px;
+$grid-item-subtitle-medium: 16px;
+$grid-item-subtitle-large: 17px;
+$grid-item-subtitle-weight: 300;
+$grid-item-subtitle-spacing: 0em;
+
+$h1-small: 25px;
+$h1-medium: 35px;
+$h1-large: 45px;
+$h1-weight: 500;
+$h1-spacing: -0.02em;
+$h1-lineheight: 1.2;
+
+$h2-small: 22px;
+$h2-medium: 30px;
+$h2-large: 35px;
+$h2-weight: 500;
+$h2-spacing: -0.02em;
+$h2-lineheight: 1.2;
+
+$h3-small: 22px;
+$h3-medium: 25px;
+$h3-large: 30px;
+$h3-weight: 500;
+$h3-spacing: -0.02em;
+$h3-lineheight: 1.3;
+
+$h4-small: 18px;
+$h4-medium: 22px;
+$h4-large: 24px;
+$h4-weight: 500;
+$h4-spacing: 0em;
+$h4-lineheight: 1.6;
+
+$h5-small: 17px;
+$h5-medium: 20px;
+$h5-large: 22px;
+$h5-weight: 500;
+$h5-spacing: 0em;
+$h5-lineheight: 1.6;
+
+$h6-small: 17px;
+$h6-medium: 20px;
+$h6-large: 20px;
+$h6-weight: 500;
+$h6-spacing: 0em;
+$h6-lineheight: 1.6;
+
+$p-small: 16px;
+$p-medium: 18px;
+$p-large: 20px;
+$p-weight: 300;
+$p-spacing: 0em;
+$p-lineheight: 1.6;
+
+$blockquote-small: 25px;
+$blockquote-medium: 35px;
+$blockquote-large: 45px;
+$blockquote-weight: 300;
+$blockquote-spacing: -0.02em;
+$blockquote-lineheight: 1.6;
+
+$button-weight: 500;
+$button-spacing: 0em;
+
+$blogpost-small: 15px;
+$blogpost-medium: 16px;
+$blogpost-large: 18px;
+$blogpost-weight: 300;
+$blogpost-spacing: 0em;
+$blogpost-lineheight: 1.6;
+
+// Logo
+$logo-width: 200px;
+
+
+// Grid item
+$overlay-opacity: 0.95;
+$grid-spacing: 20px;
+
+
+
+// - - - - - - - - - - Global styles
+
+@import "sass/_basic";
+
+@import "sass/_includes/_header";
+@import "sass/_includes/_footer";
+
+@import "sass/_includes/_content";
+@import "sass/_includes/_socials";
+@import "sass/_includes/_gallery";
+@import "sass/_includes/_syntax";
+@import "sass/_includes/_contact-form";
+
+// - - - - - - - - - - Section styles
+
+@import "sass/_includes/_portfolio";
+@import "sass/_includes/_blog";
+@import "sass/_member";
+@import "sass/_bib";
+@import "sass/_posts";
+@import "sass/_publications";

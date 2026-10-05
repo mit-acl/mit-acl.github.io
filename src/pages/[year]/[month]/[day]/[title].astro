@@ -1,0 +1,33 @@
+---
+// Each news post's own page (formerly _layouts/post.html).
+import type { GetStaticPaths } from 'astro';
+import { render } from 'astro:content';
+import Default from '../../../../layouts/Default.astro';
+import { getNews, longDate, postPath } from '../../../../lib/news';
+
+export const getStaticPaths = (async () => {
+  const posts = await getNews();
+  return posts.map((post) => {
+    const [, year, month, day, title] = postPath(post).replace(/\.html$/, '').split('/');
+    return { params: { year, month, day, title }, props: { post } };
+  });
+}) satisfies GetStaticPaths;
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Default pageUrl={postPath(post)} title={post.data.title} image={post.data.featured_image}>
+  <section class="intro">
+    <div class="wrap">
+      <h1>{post.data.title}</h1>
+      <p>{longDate(post.data.date)}</p>
+    </div>
+  </section>
+
+  <section class="single">
+    <div class="wrap">
+      <Content />
+    </div>
+  </section>
+</Default>

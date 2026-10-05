@@ -1,0 +1,13 @@
+---
+// Older news: /page2/, /page3/, ...
+import type { GetStaticPaths } from 'astro';
+import Home from '../../components/Home.astro';
+import { getNewsPages } from '../../lib/news';
+
+export const getStaticPaths = (async () => {
+  const pages = await getNewsPages();
+  return pages.slice(1).map((_, i) => ({ params: { page: String(i + 2) } }));
+}) satisfies GetStaticPaths;
+---
+
+<Home page={Number(Astro.params.page)} />

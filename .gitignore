@@ -1,8 +1,16 @@
-docs
-.sass-cache
-_site
-docker/Gemfile
-Gemfile.lock
-_bibliography
-bibliography-master
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# old Jekyll build checkout (gh-pages branch)
+_site/
+
+# misc
 **/.DS_Store
+*.log
+npm-debug.log*
+.env
+.env.production

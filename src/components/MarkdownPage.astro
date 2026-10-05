@@ -1,0 +1,17 @@
+---
+// Renders an entry of the `pages` collection (src/content/pages/<id>.md).
+import { getEntry, render } from 'astro:content';
+import Page from './Page.astro';
+
+interface Props {
+  id: string;
+}
+
+const entry = (await getEntry('pages', Astro.props.id))!;
+const { Content } = await render(entry);
+const { title, subtitle, description, featured_image } = entry.data;
+---
+
+<Page title={title} subtitle={subtitle} description={description} image={featured_image}>
+  <Content />
+</Page>

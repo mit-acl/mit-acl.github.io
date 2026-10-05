@@ -1,0 +1,29 @@
+---
+// A simple titled page (formerly _layouts/page.html).
+import Default from '../layouts/Default.astro';
+
+interface Props {
+  title: string;
+  subtitle?: string | null;
+  description?: string | null;
+  image?: string | null;
+  fullPageLoad?: boolean;
+}
+
+const { title, subtitle, description, image, fullPageLoad } = Astro.props;
+---
+
+<Default title={title} description={description} image={image} fullPageLoad={fullPageLoad}>
+  <section class="intro">
+    <div class="wrap">
+      <h1>{title}</h1>
+      <p>{subtitle}</p>
+    </div>
+  </section>
+
+  <section class="single">
+    <div class="wrap">
+      <slot />
+    </div>
+  </section>
+</Default>
