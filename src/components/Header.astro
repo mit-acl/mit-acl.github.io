@@ -1,0 +1,67 @@
+---
+import { site } from '../data/site';
+import Socials from './Socials.astro';
+
+const { header } = site;
+const year = new Date().getFullYear();
+---
+
+<header class="header">
+  <div class="header__content">
+    <a href="/" class="header__logo">
+      <img src={header.logo} class="header__logo__img" />
+    </a>
+
+    <h1 class="header__tagline">{site.title}</h1>
+
+    <div class="menu">
+      <div class="menu__toggle js-menu-toggle">
+        <div class="menu__toggle__icon"><span></span></div>
+      </div>
+      <div class="menu__wrap">
+        <ul class="menu__list">
+          {
+            site.menuItems.map((item) => (
+              <li class="menu__list__item">
+                <a href={item.url} class="menu__list__item__link menu__list__item__resize">{item.title}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <div class="projects-menu">
+      <ul class="menu__list">
+        {
+          site.quickLinks.map((link) => (
+            <li class="menu__list__item">
+              <a href={link.url} class="menu__list__item__link menu__list__item__resize">{link.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="header__lower">
+      <div class="footer__logo__row">
+        <a href={header.aeroastro.url} class="footer__logo"><img src={header.aeroastro.logo} class="footer__logo__img" /></a>
+        <a href={header.lids.url} class="footer__logo"><img src={header.lids.logo} class="footer__logo__img" /></a>
+      </div>
+
+      <div class="footer__logo__row2">
+        <a href={header.mit.url} class="footer__logo"><img src={header.mit.logo} class="footer__logo__img" /></a>
+      </div>
+
+      <Socials />
+
+      <div class="footer__accessibility">
+        <a href={header.accessibility.url}>{header.accessibility.label}</a>
+      </div>
+
+      <div class="footer__copyright">
+        <span>© {year} {site.title}</span>
+      </div>
+    </div>
+  </div>
+</header>

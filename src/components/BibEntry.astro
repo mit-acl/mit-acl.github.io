@@ -1,0 +1,20 @@
+---
+// One publication: the formatted citation, a [PDF] link if the entry has a
+// `url`, and a [BibTeX] toggle (toggleInfo() lives in public/js/index-min.js).
+import type { Publication } from '../lib/bibtex';
+import { formatCitation } from '../lib/citations';
+
+interface Props {
+  pub: Publication;
+}
+
+const { pub } = Astro.props;
+const url = pub.fields.url;
+---
+
+<li>
+  <span id={pub.key} set:html={formatCitation(pub.key) ?? ''} />
+  {url && <a href={url}>[PDF]</a>}
+  <a href={`javascript:toggleInfo('${pub.key}');`} class="js-no-ajax">[BibTeX]</a>
+  <pre id={`bib_${pub.key}`} class="bibtex noshow">{pub.raw}</pre>
+</li>

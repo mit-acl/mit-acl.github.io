@@ -1,0 +1,222 @@
+---
+// A member's profile page (formerly _layouts/member.html).
+import type { GetStaticPaths } from 'astro';
+import { getCollection, render } from 'astro:content';
+import Default from '../../layouts/Default.astro';
+import { newestFirst } from '../../lib/order';
+
+export const getStaticPaths = (async () => {
+  const members = await getCollection('members');
+  const projects = newestFirst(await getCollection('projects'));
+  const names = new Map(members.map((m) => [m.data.kerberos, m.data.name]));
+  return members.map((member) => ({
+    params: { kerberos: member.id },
+    props: {
+      member,
+      // Projects this person is credited on, with every author's display name.
+      projects: projects
+        .filter((p) => p.data.authors?.includes(member.data.kerberos))
+        .map((p) => ({
+          ...p.data,
+          url: `/projects/${p.id}`,
+          authorNames: p.data.authors!.map((k) => ({ name: names.get(k) ?? k, self: k === member.data.kerberos })),
+        })),
+    },
+  }));
+}) satisfies GetStaticPaths;
+
+const { member, projects } = Astro.props;
+const m = member.data;
+const { Content } = await render(member);
+
+const when = (d: NonNullable<typeof m.education>[number]) =>
+  d.current ? (d.start ? `, ${d.start} - current` : '') : d.graduation ? `, ${d.graduation}` : '';
+---
+
+<Default pageUrl={`/people/${member.id}`} title={m.name}>
+  <section class="intro member-intro">
+    <div class="wrap" id="member">
+      <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <!-- Intro -->
+            <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+              <tr>
+                <td width="62%" valign="middle">
+                  <div class="name-position">
+                    <h2>{m.name}</h2>
+                    <br />
+                    {m.active ? <h4>{m.title}</h4> : <h4 style="color: red">Alum</h4>}
+                  </div>
+                  <div class="image-cropper top-portrait">
+                    <img src={m.portrait} width="100%" />
+                  </div>
+                  <div class="side-intro">
+                    <p>
+                      <Content />
+                    </p>
+                  </div>
+                  <p align="center">
+                    {
+                      m.links && m.links.length > 0 && (
+                        <>
+                          {m.links.map((link, i) => (
+                            <>
+                              <a href={link.url}> {link.type} </a>
+                              {i < m.links!.length - 1 && <Fragment set:html="&nbsp/&nbsp" />}
+                            </>
+                          ))}
+                          <br />
+                        </>
+                      )
+                    }
+                    {
+                      m.phone && (
+                        <>
+                          {m.phone}
+                          <br />
+                        </>
+                      )
+                    }
+                    {m.kerberos} [at] mit [dot] edu
+                    <br />
+                    {m.office}
+                  </p>
+                </td>
+                <td width="38%" class="side-portrait">
+                  <div class="image-cropper">
+                    <img src={m.portrait} width="100%" />
+                  </div>
+                </td>
+              </tr>
+            </table>
+
+            <!-- Education -->
+            {
+              m.education && (
+                <>
+                  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+                    <tr>
+                      <td width="100%" valign="middle" style="padding-bottom: 0px">
+                        <h4>Education</h4>
+                      </td>
+                    </tr>
+                  </table>
+                  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+                    <tr>
+                      <td width="100%" valign="top">
+                        <ul>
+                          {m.education.map((degree) => (
+                            <li>
+                              <strong>{degree.type}</strong> in {degree.study}, {degree.school}{when(degree)}
+                            </li>
+                          ))}
+                        </ul>
+                      </td>
+                    </tr>
+                  </table>
+                </>
+              )
+            }
+
+            <!-- Research Interests -->
+            {
+              m.interests && (
+                <>
+                  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+                    <tr>
+                      <td width="100%" valign="middle" style="padding-bottom: 0px">
+                        <h4>Research Interests</h4>
+                      </td>
+                    </tr>
+                  </table>
+                  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+                    <tr>
+                      <td width="100%" valign="top">
+                        <ul>
+                          {m.interests.map((interest) => (
+                            <li>{interest}</li>
+                          ))}
+                        </ul>
+                      </td>
+                    </tr>
+                  </table>
+                </>
+              )
+            }
+
+            <!-- Awards -->
+            {
+              m.awards && (
+                <>
+                  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+                    <tr>
+                      <td width="100%" valign="middle" style="padding-bottom: 0px">
+                        <h4>Awards</h4>
+                      </td>
+                    </tr>
+                  </table>
+                  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+                    <tr>
+                      <td width="100%" valign="top">
+                        <ul>
+                          {m.awards.map((award) => (
+                            <li>
+                              <strong>{award.name}</strong>, {award.date}
+                            </li>
+                          ))}
+                        </ul>
+                      </td>
+                    </tr>
+                  </table>
+                </>
+              )
+            }
+
+            <!-- Projects -->
+            {
+              projects.length > 0 && (
+                <>
+                  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+                    <tr>
+                      <td>
+                        <h4>Projects</h4>
+                      </td>
+                    </tr>
+                  </table>
+                  <table width="100%" align="center" border="0" cellpadding="20">
+                    {projects.map((project) => (
+                      <tr>
+                        {project.featured_image && (
+                          <td width="25%" class="side-image">
+                            <img src={project.featured_image} alt={project.image_alt} width="100%" />
+                          </td>
+                        )}
+                        <td
+                          width={project.featured_image ? '75%' : '100%'}
+                          colspan={project.featured_image ? undefined : 2}
+                          valign="top"
+                        >
+                          <p>
+                            <a href={project.url}>
+                              <papertitle>{project.title}</papertitle>
+                            </a>
+                            <br />
+                            {project.authorNames.map((a) => (a.self ? <><strong>{a.name}</strong>, </> : `${a.name}, `))}
+                            {project.date?.getUTCFullYear()}
+                            <br />
+                            <p>{project.description}</p>
+                          </p>
+                        </td>
+                      </tr>
+                    ))}
+                  </table>
+                </>
+              )
+            }
+          </td>
+        </tr>
+      </table>
+    </div>
+  </section>
+</Default>

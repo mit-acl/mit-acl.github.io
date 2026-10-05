@@ -1,0 +1,5 @@
+# Ignore all .bib files
+*.bib
+
+# Except for ACL_Publications.bib
+!ACL_Publications.bib

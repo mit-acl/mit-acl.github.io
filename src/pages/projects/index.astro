@@ -1,0 +1,71 @@
+---
+// Project grid (formerly _pages/projects.html): projects with `active: true`
+// as tiles, `active: false` under "Previous projects", newest first.
+import { getCollection } from 'astro:content';
+import Default from '../../layouts/Default.astro';
+import { newestFirst } from '../../lib/order';
+
+const projects = newestFirst(await getCollection('projects'));
+const active = projects.filter((p) => p.data.active === true);
+const past = projects.filter((p) => p.data.active === false);
+const colors = ['one', 'two', 'three'];
+const placeholders = ['/images/demo/demo-square.jpg', '/images/demo/demo-landscape.jpg', '/images/demo/demo-landscape-2.jpg'];
+let placeholder = 0;
+---
+
+<Default title="Projects" description="A minimal, fixed sidebar grid portfolio Jekyll theme.">
+  <section class="portfolio">
+    <div class="content-wrap portfolio-wrap">
+      {
+        active.map((project, i) => (
+          <div class="portfolio-item">
+            <a class="portfolio-item__link" href={`/projects/${project.id}`}>
+              <div class="portfolio-item__image">
+                <img
+                  src={project.data.featured_image || placeholders[placeholder++ % placeholders.length]}
+                  alt={project.data.title}
+                />
+              </div>
+
+              <div class={`portfolio-item__content color_${colors[i % colors.length]}`}>
+                <div class="portfolio-item__info">
+                  <h2 class="portfolio-item__title">{project.data.title}</h2>
+                  <p class="portfolio-item__subtitle">{project.data.subtitle}</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        ))
+      }
+    </div>
+
+    {past.length > 0 && <hr class="project-break" />}
+  </section>
+
+  {
+    past.length > 0 && (
+      <section class="intro past_projects">
+        <div class="wrap" id="member">
+          <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0" class="member-listing">
+            <tr>
+              <td width="100%" colspan="2" valign="bottom">
+                <h2>Previous projects</h2>
+              </td>
+            </tr>
+            <tr>
+              <td width="100%" colspan="2" valign="center">
+                <ul class="project-listing">
+                  {past.map((project) => (
+                    <li>
+                      <a href={`/projects/${project.id}`}>{project.data.title}</a>
+                    </li>
+                  ))}
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </section>
+    )
+  }
+</Default>

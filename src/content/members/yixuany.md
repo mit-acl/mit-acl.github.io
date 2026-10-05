@@ -1,0 +1,22 @@
+---
+active: false
+kerberos: yixuany
+name: Yixuan (Lucas) Jia
+office: 31-234B
+portrait: /images/members/yixuany.jpg
+position: PhD
+title: PhD Candidate
+
+education:
+- type: M.S.
+  study: Aeronautics & Astronautics
+  school: MIT
+  graduation: 2025
+- type: B.S.
+  study: Computer Engineering & Mathematics
+  school: University of Illinois Urbana-Champaign
+  graduation: 2023
+
+interests:
+- Planning and Control
+--- 

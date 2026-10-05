@@ -1,0 +1,27 @@
+{
+  "name": "acl-website",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Aerospace Controls Laboratory (MIT) website",
+  "scripts": {
+    "dev": "astro dev --host 0.0.0.0",
+    "start": "astro dev --host 0.0.0.0",
+    "build": "astro build",
+    "preview": "astro preview --host 0.0.0.0",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@citation-js/core": "^0.7.14",
+    "@citation-js/plugin-bibtex": "^0.7.14",
+    "@citation-js/plugin-csl": "^0.7.14",
+    "astro": "^5.2.0",
+    "remark-smartypants": "^3.0.2",
+    "sass": "^1.83.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@types/node": "^20.19.43",
+    "typescript": "^5.7.0"
+  }
+}
