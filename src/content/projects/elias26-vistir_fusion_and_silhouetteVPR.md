@@ -4,7 +4,7 @@ subtitle:
 date: 2026-09-04
 description: We use a fuse visible and thermal camera to provide illumination-robust localization around an unknown 
 authors:
-- eelias
+- eelias36
 featured_image: '/images/projects/efficient_rtmpc_learning_cover_img.png'
 papers:
 - elias2026scitech
