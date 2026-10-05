@@ -1,0 +1,54 @@
+---
+// All publications by year (formerly _pages/publications.html), built from
+// _bibliography/ACL_Publications.bib.
+import Default from '../../layouts/Default.astro';
+import BibEntry from '../../components/BibEntry.astro';
+import { getPublications } from '../../lib/bibtex';
+
+const earliestYear = 1990;
+const latestYear = new Date().getFullYear();
+const pubs = getPublications();
+const years = Array.from({ length: latestYear - earliestYear + 1 }, (_, i) => latestYear - i);
+// Quick links every five years, skipping the current year.
+const quickLinks = years.filter((y, i) => y % 5 === 0 && i > 0);
+---
+
+<Default title="Publications" description="A collection of published works from ACL">
+  <section class="intro" id="top">
+    <div class="wrap" id="bibliography">
+      <h1>Publications</h1>
+      <div class="bib-navigation">
+        <ul>
+          <li><span id="quick-links">Quick links:</span></li>
+          {
+            quickLinks.map((year) => (
+              <li>
+                <a href={`#bib-year-${year}`} class="js-no-ajax">{year}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      {
+        years.map((year, i) => (
+          <div class="bib-year" id={`bib-year-${year}`}>
+            <h2>{year}</h2>
+            {i > 0 && (
+              <a href="#top" class="js-no-ajax">
+                <span class="return-link">(Return to top)</span>
+              </a>
+            )}
+            <ul class="bibliography">
+              {pubs
+                .filter((p) => p.year === year)
+                .map((pub) => (
+                  <BibEntry pub={pub} />
+                ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Default>

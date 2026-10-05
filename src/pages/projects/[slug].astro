@@ -1,0 +1,64 @@
+---
+// A project page (formerly _layouts/project.html).
+import type { GetStaticPaths } from 'astro';
+import { getCollection, render } from 'astro:content';
+import Default from '../../layouts/Default.astro';
+import { formatCitation } from '../../lib/citations';
+
+export const getStaticPaths = (async () => {
+  const projects = await getCollection('projects');
+  const members = new Map((await getCollection('members')).map((m) => [m.data.kerberos, m]));
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: {
+      project,
+      authors: (project.data.authors ?? []).map((k) => {
+        const member = members.get(k);
+        return member ? { name: member.data.name, url: `/people/${member.id}` } : { name: k, url: null };
+      }),
+    },
+  }));
+}) satisfies GetStaticPaths;
+
+const { project, authors } = Astro.props;
+const p = project.data;
+const { Content } = await render(project);
+---
+
+<Default pageUrl={`/projects/${project.id}`} title={p.title} description={p.description} image={p.featured_image} redirectTo={p.redirect_to}>
+  <section class="intro">
+    <div class="wrap">
+      <h1>{p.title}</h1>
+      <p>
+        {
+          authors.map((a, i) => (
+            <>
+              {a.url ? <a href={a.url}>{a.name}</a> : a.name}
+              {i < authors.length - 1 && ', '}
+            </>
+          ))
+        }
+      </p>
+    </div>
+  </section>
+
+  <section class="single">
+    <div class="wrap">
+      <Content />
+
+      {
+        p.papers && (
+          <>
+            <h3>Related Publications</h3>
+            <ul class="papers">
+              {p.papers.map((key) => {
+                const html = formatCitation(key);
+                return <li>{html && <span id={key} set:html={html} />}</li>;
+              })}
+            </ul>
+          </>
+        )
+      }
+    </div>
+  </section>
+</Default>

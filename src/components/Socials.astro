@@ -1,0 +1,19 @@
+---
+import { site } from '../data/site';
+
+// Font Awesome's Facebook icon is named "facebook-f".
+const socials = Object.entries(site.socials).filter(([, url]) => url);
+const label = (name: string) => name.replace(/-/g, ' ').replace(/^./, (c) => c.toUpperCase());
+---
+
+<ul class="socials">
+  {
+    socials.map(([name, url]) => (
+      <li class="socials__item">
+        <a href={url} target="_blank" class="socials__item__link" title={label(name)}>
+          <i class={`fab fa-${name === 'facebook' ? 'facebook-f' : name}`} aria-hidden="true" />
+        </a>
+      </li>
+    ))
+  }
+</ul>

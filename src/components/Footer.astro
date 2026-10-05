@@ -1,0 +1,25 @@
+---
+import { site } from '../data/site';
+import Socials from './Socials.astro';
+
+const { header } = site;
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <Socials />
+
+  <div class="footer__logo__row__mobile">
+    <a href={header.lids.url} class="footer__logo"><img src={header.lids.logo} class="footer__logo__img" /></a>
+    <a href={header.aeroastro.url} class="footer__logo"><img src={header.aeroastro.logo} class="footer__logo__img" /></a>
+    <a href={header.mit.url} class="footer__logo" style="max-width: 35%"><img src={header.mit.logo} class="footer__logo__img" /></a>
+  </div>
+
+  <div class="footer__accessibility">
+    <a href={header.accessibility.url}>{header.accessibility.label}</a>
+  </div>
+
+  <div class="footer__copyright">
+    <span>© {year} {site.title}</span>
+  </div>
+</footer>

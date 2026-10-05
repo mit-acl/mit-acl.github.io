@@ -1,0 +1,113 @@
+---
+// The home page (and its older-news pages /page2/, /page3/, ...): pinned posts
+// on the first page, then the news posts for page `page`.
+import { getCollection, render } from 'astro:content';
+import Default from '../layouts/Default.astro';
+import { getNewsPages, longDate, newsPagePath } from '../lib/news';
+
+interface Props {
+  page: number;
+}
+
+const { page } = Astro.props;
+const newsPages = await getNewsPages();
+const pinned = page === 1 ? (await getCollection('pinned')).sort((a, b) => a.id.localeCompare(b.id)) : [];
+const pinnedRendered = await Promise.all(pinned.map(async (p) => ({ post: p, Content: (await render(p)).Content })));
+const posts = await Promise.all(
+  newsPages[page - 1].map(async (p) => ({ post: p, Content: (await render(p)).Content })),
+);
+const prev = page > 1 ? newsPagePath(page - 1) : null;
+const next = page < newsPages.length ? newsPagePath(page + 1) : null;
+---
+
+<Default title={page === 1 ? undefined : 'Massachusetts Institute of Technology'} description="The Aerospace Controls Laboratory at MIT">
+  <section class="intro">
+    <div class="wrap post-table">
+      {
+        page === 1 && (
+          <table align="center" border="0" cellspacing="0" cellpadding="20" id="pinned-posts-table">
+            {pinnedRendered.map(({ post, Content }) => (
+              <>
+                <tr class="post-title">
+                  <td colspan="2">
+                    <h1>{post.data.title}</h1>
+                    {post.data.date && (
+                      <time>
+                        <h6>{longDate(post.data.date)}</h6>
+                      </time>
+                    )}
+                  </td>
+                </tr>
+                <tr class="post-content">
+                  <td width="100%" colspan="2" valign="top">
+                    <Content />
+                  </td>
+                </tr>
+              </>
+            ))}
+          </table>
+        )
+      }
+      <h1>Recent News</h1>
+      <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <table align="center" border="0" cellspacing="0" cellpadding="20">
+              {
+                posts.map(({ post, Content }) => (
+                  <>
+                    <tr class="post-title">
+                      <td colspan="2">
+                        <h4>{post.data.title}</h4>
+                        <time>
+                          <h6>{longDate(post.data.date)}</h6>
+                        </time>
+                      </td>
+                    </tr>
+                    <tr class="post-content">
+                      {post.data.featured_image ? (
+                        <>
+                          <td valign="top">
+                            <Content />
+                          </td>
+                          <td class="side-image" valign="center" align="center" width="35%">
+                            <img src={post.data.featured_image} />
+                          </td>
+                        </>
+                      ) : (
+                        <td width="100%" colspan="2" valign="top">
+                          <Content />
+                        </td>
+                      )}
+                    </tr>
+                  </>
+                ))
+              }
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  {
+    (prev || next) && (
+      <section class="pagination">
+        {prev && (
+          <div class="pagination__prev">
+            <a href={prev} class="button button--large">
+              <i class="fa fa-angle-left" aria-hidden="true" /> <span>Newer Posts</span>
+            </a>
+          </div>
+        )}
+        {next && (
+          <div class="pagination__next">
+            <a href={next} class="button button--large">
+              <span>Older Posts</span> <i class="fa fa-angle-right" aria-hidden="true" />
+            </a>
+          </div>
+        )}
+      </section>
+    )
+  }
+</Default>
