@@ -1,8 +1,10 @@
 # bibliography
 
-Definitive record of all ACL publications. This repo should be updated regularly as new works are published.
+Definitive record of all ACL publications. This file should be updated regularly as new works are published.
 
-This repo is pulled into [ACL website](https://github.com/mit-acl/mit-acl.github.io) on build.
+The website's Publications page and projects' "Related Publications" are built from `ACL_Publications.bib`,
+formatted with `aiaa.csl`. (This directory used to be the separate
+[mit-acl/bibliography](https://github.com/mit-acl/bibliography) repo; its history was merged in.)
 
 
 ## Test before you commit

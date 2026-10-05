@@ -6,11 +6,9 @@ Website for the Aerospace Controls Laboratory at MIT ([acl.mit.edu](https://acl.
 ## Setup
 
 ```bash
-git clone --recurse-submodules git@github.com:mit-acl/mit-acl.github.io.git
+git clone git@github.com:mit-acl/mit-acl.github.io.git
 cd mit-acl.github.io
 ```
-
-(Already cloned without submodules? Run `git submodule update --init`.)
 
 ## Running it locally
 
@@ -32,9 +30,9 @@ The first run builds the Docker image (~30s); after that it starts in a few seco
 ## Deploying
 
 Pushing to `main` deploys automatically: the [Deploy to GitHub Pages](.github/workflows/deploy.yml)
-workflow builds the site (with the latest bibliography) and publishes it. Check its progress
-[here](https://github.com/mit-acl/mit-acl.github.io/actions). To redeploy without a code change
-(e.g. after updating the bibliography), run the workflow manually from the Actions tab.
+workflow builds the site and publishes it. Check its progress
+[here](https://github.com/mit-acl/mit-acl.github.io/actions). To redeploy without a code change,
+run the workflow manually from the Actions tab.
 
 ## Editing content
 
@@ -45,7 +43,7 @@ workflow builds the site (with the latest bibliography) and publishes it. Check 
 | **News** | `src/content/news/YYYY-MM-DD-title.md` | Copy [`howto/template_news_post.md`](howto/template_news_post.md). |
 | **Home page intro** | `src/content/pinned/` | The welcome text and statement of values pinned above the news. |
 | **Contact / Thanks pages** | `src/content/pages/` | |
-| **Publications** | [bibliography repo](https://github.com/mit-acl/bibliography) | See below. |
+| **Publications** | `bibliography/ACL_Publications.bib` | Paste a BibTeX entry; see below. |
 | **Faculty / UROPs** | `src/data/people.ts` | Directory-only entries that don't have a profile page. |
 | **Menu, quick links, logos, People sections** | `src/data/site.ts` | Site-wide settings in one place. |
 | **Colors, fonts** | `src/styles/style.scss` | Variables at the top of the file. |
@@ -57,10 +55,11 @@ Images and other files go under `public/` and are linked without the `public` pr
 
 ### Publications
 
-Citations are stored in [the bibliography repo](https://github.com/mit-acl/bibliography), checked out
-here as the `_bibliography` submodule. Don't edit `_bibliography/` in this repo: commit changes to the
-bibliography repo, then redeploy. To preview the latest bibliography locally, run
-`git submodule update --remote _bibliography`.
+All ACL publications live in [`bibliography/ACL_Publications.bib`](bibliography/ACL_Publications.bib)
+(formerly the separate `mit-acl/bibliography` repo, merged here with its history). Add or fix entries
+there and the Publications page rebuilds from it; see [`bibliography/README.md`](bibliography/README.md)
+for the validation and merge scripts. The dev server reads the file once at startup, so restart it
+(`./serve.sh stop && ./serve.sh`) to see bibliography edits.
 
 Projects can cite entries in their Markdown body with `{% reference <BibTeX key> %}`, or list them
 under `papers:` in the front matter.
@@ -87,7 +86,7 @@ src/
   pages/            one file per route (/, /people, /projects, /publications, ...)
   styles/           style.scss + the theme's Sass partials
 public/             static files served as-is (images, files, the theme's JS, CNAME)
-_bibliography/      submodule: ACL_Publications.bib and the AIAA citation style
+bibliography/       ACL_Publications.bib, the AIAA citation style, and helper scripts
 ```
 
 ## Notes

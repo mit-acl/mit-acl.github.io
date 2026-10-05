@@ -6,12 +6,11 @@
 // @string macros, brace/quote-delimited and concatenated values, and TeX accent
 // escapes — all handled below.
 
-// _bibliography is a git submodule of https://github.com/mit-acl/bibliography;
-// edit the .bib there, not here. Read from disk (relative to the project root)
-// so this module also works when imported from astro.config.mjs.
+// Read from disk (relative to the project root) so this module also works when
+// imported from astro.config.mjs.
 import { readFileSync } from 'node:fs';
 
-const bibText = readFileSync('_bibliography/ACL_Publications.bib', 'utf8');
+const bibText = readFileSync('bibliography/ACL_Publications.bib', 'utf8');
 
 export interface Publication {
   key: string;

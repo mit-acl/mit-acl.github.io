@@ -8,7 +8,7 @@ import '@citation-js/plugin-csl';
 import { readFileSync } from 'node:fs';
 import { bibliographySource, getPublicationMap } from './bibtex';
 
-plugins.config.get('@csl').templates.add('aiaa', readFileSync('_bibliography/aiaa.csl', 'utf8'));
+plugins.config.get('@csl').templates.add('aiaa', readFileSync('bibliography/aiaa.csl', 'utf8'));
 
 const THESIS_GENRES: Record<string, string> = {
   phdthesis: 'PhD thesis',
