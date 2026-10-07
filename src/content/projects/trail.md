@@ -9,7 +9,7 @@ featured_image: '/images/projects/trail.png'
 
 authors:
 - yixuany
-- andyli
+- Andy Li
 
 active: true
 ---
