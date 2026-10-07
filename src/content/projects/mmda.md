@@ -10,7 +10,7 @@ featured_image: '/images/projects/mmda.png'
 authors:
 - yixuany
 - masonbp
-- andyli
+- Andy Li
 
 active: true
 ---
