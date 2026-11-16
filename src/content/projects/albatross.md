@@ -22,6 +22,7 @@ active: true
 Birds and sailplane pilots stay aloft for hours by extracting energy from the atmosphere. We aim to give small fixed-wing UAS the same ability. Thermal soaring exploits rising columns of warm air, ridge soaring exploits air deflected upward by terrain, and dynamic soaring extracts energy from wind gradients through aggressive maneuvering. None of this lift is visible, so the aircraft must infer it from noisy onboard sensors while still completing its mission. We develop and test our algorithms in simulation (JSBSim with PX4 software-in-the-loop) and on fixed-wing hardware.
 
 ![Simulated glider route through mountainous terrain](/images/projects/albatross_integrated_3d.jpg)
+
 *A simulated mission. The glider follows the planner's route (green), diverts to climb in a thermal (orange), then continues toward its goal.*
 
 ### Integrated Static Soaring
@@ -29,6 +30,7 @@ Birds and sailplane pilots stay aloft for hours by extracting energy from the at
 We built an onboard system that exploits both thermal and ridge lift while following a mission with a goal location and a time limit. The system estimates a 3D wind field online by fusing the [WindNinja](https://ninjastorm.firelab.org/windninja/) terrain wind solver with onboard wind measurements in an unscented Kalman filter. An adaptive planner uses this wind field to route through ridge lift and away from sink, using as little battery energy as possible. When the aircraft encounters a thermal, a reactive controller holds it in the lift while an EKF estimates the thermal. A nonlinear model predictive controller then plans the climb.
 
 ![Ridge soaring simulation: adaptive planner vs. wind-agnostic baseline](/images/projects/albatross_ridge_sim.png)
+
 *Simulated ridge soaring in the Eastern Sierra Nevada. Routing through the ridge lift, the planner (green) arrives up to 166 m higher than a planner that ignores the wind (dashed).*
 
 ### Learning to Soar
